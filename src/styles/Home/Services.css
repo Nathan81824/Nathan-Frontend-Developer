@@ -1,0 +1,442 @@
+/* =================================
+   SERVICES SECTION
+================================= */
+
+.services {
+  width: 100%;
+
+  padding: 120px 0;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.services-container {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* =================================
+   SECTION HEADER
+================================= */
+
+.services-header {
+  max-width: 700px;
+
+  margin-bottom: 65px;
+
+  animation: servicesHeaderIn 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =================================
+   LABEL
+================================= */
+
+.services-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  padding: 8px 14px;
+
+  background: #e5e7eb;
+
+  color: #374151;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.services-header h2 {
+  margin: 0 0 20px;
+
+  color: #111827;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+}
+
+.services-header h2 span {
+  display: block;
+
+  color: #6b7280;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.services-intro {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   SERVICES GRID
+================================= */
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =================================
+   SERVICE CARD
+================================= */
+
+.service-card {
+  position: relative;
+
+  min-height: 330px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #f8fafc;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  cursor: default;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =================================
+   CARD HOVER
+================================= */
+
+.service-card:hover {
+  transform: translateY(-10px);
+
+  background: #ffffff;
+
+  border-color: #d1d5db;
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.1);
+}
+
+
+/* =================================
+   ICON
+================================= */
+
+.service-icon {
+  width: 55px;
+
+  height: 55px;
+
+  margin-bottom: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  border-radius: 14px;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.service-card:hover .service-icon {
+  transform:
+    rotate(-5deg)
+    scale(1.08);
+
+  background: #374151;
+}
+
+
+/* =================================
+   NUMBER
+================================= */
+
+.service-number {
+  position: absolute;
+
+  top: 28px;
+
+  right: 28px;
+
+  color: #d1d5db;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  transition:
+    color 0.3s ease;
+}
+
+.service-card:hover .service-number {
+  color: #9ca3af;
+}
+
+
+/* =================================
+   CARD TITLE
+================================= */
+
+.service-card h3 {
+  margin: 0 0 15px;
+
+  color: #111827;
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =================================
+   CARD DESCRIPTION
+================================= */
+
+.service-card p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   CARD ARROW
+================================= */
+
+.service-arrow {
+  margin-top: auto;
+
+  padding-top: 25px;
+
+  color: #111827;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.service-card:hover .service-arrow {
+  transform: translateX(8px);
+}
+
+
+/* =================================
+   CARD DECORATION
+================================= */
+
+.service-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+
+  height: 150px;
+
+  right: -80px;
+
+  bottom: -80px;
+
+  background: #e5e7eb;
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.service-card:hover::after {
+  opacity: 0.5;
+
+  transform: scale(1.2);
+}
+
+
+/* =================================
+   HEADER ANIMATION
+================================= */
+
+@keyframes servicesHeaderIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .services {
+    padding: 100px 0;
+  }
+
+  .services-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 20px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .services {
+    padding: 80px 0;
+  }
+
+  .services-container {
+    width: 90%;
+  }
+
+  .services-header {
+    margin-bottom: 45px;
+  }
+
+  .services-header h2 {
+    font-size: 3.3rem;
+
+    letter-spacing: -2px;
+  }
+
+  .services-intro {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .service-card {
+    min-height: 290px;
+
+    padding: 25px;
+  }
+
+  .service-icon {
+    width: 50px;
+
+    height: 50px;
+
+    margin-bottom: 30px;
+  }
+
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .services-header {
+    animation: none;
+  }
+
+  .service-card,
+  .service-icon,
+  .service-number,
+  .service-arrow,
+  .service-card::after {
+    transition: none;
+  }
+
+}

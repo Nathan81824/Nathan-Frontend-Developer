@@ -1,0 +1,800 @@
+/* =================================
+   CONTACT HERO
+================================= */
+
+.contact-hero {
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 0;
+
+  background: #f8fafc;
+
+  overflow: hidden;
+}
+
+.contact-hero-container {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+}
+
+.contact-hero-content {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  animation: contactHeroIn 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+/* =================================
+   HERO LABEL
+================================= */
+
+.contact-hero-label {
+  display: inline-block;
+
+  margin-bottom: 22px;
+
+  padding: 8px 14px;
+
+  background: #e5e7eb;
+
+  color: #374151;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+
+/* =================================
+   HERO TITLE
+================================= */
+
+.contact-hero-content h1 {
+  margin-bottom: 25px;
+
+  color: #111827;
+
+  font-size: clamp(3.5rem, 7vw, 6rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+}
+
+.contact-hero-content h1 span {
+  display: block;
+
+  color: #6b7280;
+}
+
+
+/* =================================
+   HERO DESCRIPTION
+================================= */
+
+.contact-hero-description {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #6b7280;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   HERO ANIMATION
+================================= */
+
+@keyframes contactHeroIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =================================
+   CONTACT SECTION
+================================= */
+
+.contact-section {
+  padding: 110px 0;
+
+  background: #ffffff;
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1fr;
+
+  gap: 80px;
+
+  align-items: start;
+}
+
+
+/* =================================
+   CONTACT INFO
+================================= */
+
+.contact-info {
+  animation: contactInfoIn 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.contact-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  padding: 8px 14px;
+
+  background: #e5e7eb;
+
+  color: #374151;
+
+  border-radius: 50px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+.contact-info h2 {
+  margin-bottom: 20px;
+
+  color: #111827;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.contact-info h2 span {
+  display: block;
+
+  color: #6b7280;
+}
+
+.contact-info > p {
+  max-width: 500px;
+
+  margin-bottom: 40px;
+
+  color: #6b7280;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   CONTACT DETAILS
+================================= */
+
+.contact-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.contact-detail span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.contact-detail p,
+.contact-detail a {
+  color: #111827;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+.contact-detail a {
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-detail a:hover {
+  color: #6b7280;
+}
+
+
+/* =================================
+   CONTACT FORM
+================================= */
+
+.contact-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
+  padding: 35px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.05);
+
+  animation: contactFormIn 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.1s
+    both;
+}
+
+
+/* =================================
+   FORM GROUP
+================================= */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group label {
+  color: #111827;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =================================
+   INPUTS
+================================= */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.form-group input {
+  height: 50px;
+}
+
+.form-group textarea {
+  min-height: 150px;
+
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9ca3af;
+
+  transition: opacity 0.2s ease;
+}
+
+
+/* =================================
+   INPUT FOCUS
+================================= */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #111827;
+
+  box-shadow:
+    0 0 0 3px rgba(17, 24, 39, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  opacity: 0.5;
+}
+
+
+/* =================================
+   SEND BUTTON
+================================= */
+
+.contact-form button {
+  width: 100%;
+
+  margin-top: 5px;
+
+  padding: 15px 20px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-form button:hover {
+  background: #374151;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(17, 24, 39, 0.15);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+}
+
+
+/* =================================
+   SUCCESS OVERLAY
+================================= */
+
+.success-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  backdrop-filter: blur(7px);
+
+  animation: overlayIn 0.3s ease;
+}
+
+
+/* =================================
+   SUCCESS POPUP
+================================= */
+
+.success-popup {
+  width: 100%;
+
+  max-width: 420px;
+
+  padding: 40px 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.2);
+
+  animation: popupIn 0.45s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =================================
+   SUCCESS ICON
+================================= */
+
+.success-icon {
+  width: 65px;
+
+  height: 65px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  animation: successIconIn 0.5s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.15s
+    both;
+}
+
+
+/* =================================
+   SUCCESS TITLE
+================================= */
+
+.success-popup h3 {
+  margin-bottom: 12px;
+
+  color: #111827;
+
+  font-size: 24px;
+
+  font-weight: 800;
+}
+
+
+/* =================================
+   SUCCESS MESSAGE
+================================= */
+
+.success-popup p {
+  margin-bottom: 25px;
+
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =================================
+   DONE BUTTON
+================================= */
+
+.success-popup button {
+  padding: 12px 25px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.success-popup button:hover {
+  background: #374151;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(17, 24, 39, 0.15);
+}
+
+
+/* =================================
+   SUCCESS ANIMATIONS
+================================= */
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes successIconIn {
+  from {
+    opacity: 0;
+
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =================================
+   CONTACT INFO ANIMATION
+================================= */
+
+@keyframes contactInfoIn {
+  from {
+    opacity: 0;
+
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+
+/* =================================
+   CONTACT FORM ANIMATION
+================================= */
+
+@keyframes contactFormIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(30px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+  }
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .contact-hero {
+    min-height: 60vh;
+
+    padding: 80px 0;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-info > p {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .contact-details {
+    align-items: center;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .contact-hero {
+    min-height: 60vh;
+
+    padding: 70px 0;
+  }
+
+  .contact-hero-content h1 {
+    font-size: 3.5rem;
+
+    letter-spacing: -2px;
+  }
+
+  .contact-hero-description {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+  .contact-section {
+    padding: 70px 0;
+  }
+
+  .contact-container {
+    width: 90%;
+
+    gap: 45px;
+  }
+
+  .contact-info h2 {
+    font-size: 2.8rem;
+  }
+
+  .contact-form {
+    padding: 25px;
+
+    gap: 18px;
+  }
+
+  .form-group input {
+    height: 48px;
+  }
+
+  .form-group textarea {
+    min-height: 130px;
+  }
+
+  .success-popup {
+    padding: 35px 25px;
+  }
+
+  .success-popup h3 {
+    font-size: 21px;
+  }
+
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-hero-content,
+  .contact-info,
+  .contact-form,
+  .success-overlay,
+  .success-popup,
+  .success-icon {
+    animation: none;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .contact-form button,
+  .success-popup button {
+    transition: none;
+  }
+
+}

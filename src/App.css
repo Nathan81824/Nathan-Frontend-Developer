@@ -1,0 +1,49 @@
+/* =================================
+   APP
+================================= */
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content fills available space */
+
+.app-main {
+  flex: 1;
+}
+
+/* Remove default link styling */
+
+a {
+  text-decoration: none;
+}
+
+/* Make images responsive */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Buttons */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+  .app {
+    width: 100%;
+  }
+}
