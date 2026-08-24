@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import {
   Atom,
   Braces,
@@ -6,8 +8,6 @@ import {
   GitBranch,
   Smartphone,
 } from "lucide-react";
-
-
 
 function Skills() {
   const skills = [
@@ -49,48 +49,84 @@ function Skills() {
     },
   ];
 
+  const [animatedPercentages, setAnimatedPercentages] = useState(
+    skills.map(() => 0)
+  );
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimatedPercentages(
+        skills.map((skill) => skill.percentage)
+      );
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="skills-page">
 
-      {/* =========================
+      {/* =================================
           SKILLS HERO
-      ========================== */}
+      ================================= */}
 
       <section className="skills-hero">
 
         <div className="skills-hero-container">
 
-          <p className="skills-label">
-            My Skills
-          </p>
+          <div className="skills-hero-content">
 
-          <h1>
-            Tools I Use to
-            <span>Build for the Web.</span>
-          </h1>
+            <p className="skills-hero-label">
+              <span className="skills-label-dot"></span>
+              My Skills
+            </p>
 
-          <p>
-            These are some of the technologies and tools
-            I've been learning and using to build my
-            projects.
-          </p>
+            <h1>
+              Tools I Use to
+              <span>Build for the Web.</span>
+            </h1>
+
+            <p className="skills-hero-description">
+              These are some of the technologies and tools
+              I've been learning and using to build modern,
+              responsive and interactive projects.
+            </p>
+
+          </div>
 
         </div>
 
       </section>
 
 
-      {/* =========================
-          SKILLS
-      ========================== */}
+      {/* =================================
+          SKILLS SECTION
+      ================================= */}
 
       <section className="skills-section">
 
         <div className="skills-container">
 
+          {/* SECTION HEADER */}
+
+          <div className="skills-section-header">
+
+            <p>
+              My Technologies
+            </p>
+
+            <h2>
+              What I <span>work with.</span>
+            </h2>
+
+          </div>
+
+
+          {/* SKILLS GRID */}
+
           <div className="skills-grid">
 
-            {skills.map((skill) => {
+            {skills.map((skill, index) => {
 
               const Icon = skill.icon;
 
@@ -100,10 +136,15 @@ function Skills() {
                   key={skill.name}
                 >
 
+                  {/* TOP */}
+
                   <div className="skill-card-top">
 
                     <div className="skill-icon">
-                      <Icon size={26} />
+                      <Icon
+                        size={25}
+                        strokeWidth={1.8}
+                      />
                     </div>
 
                     <span className="skill-level">
@@ -113,6 +154,8 @@ function Skills() {
                   </div>
 
 
+                  {/* INFORMATION */}
+
                   <div className="skill-info">
 
                     <h2>
@@ -120,20 +163,40 @@ function Skills() {
                     </h2>
 
                     <span>
-                      {skill.percentage}%
+                      {animatedPercentages[index]}%
                     </span>
 
                   </div>
 
+
+                  {/* PROGRESS BAR */}
 
                   <div className="skill-bar">
 
                     <div
                       className="skill-progress"
                       style={{
-                        width: `${skill.percentage}%`,
+                        width:
+                          `${animatedPercentages[index]}%`,
                       }}
                     />
+
+                  </div>
+
+
+                  {/* SKILL FOOTER */}
+
+                  <div className="skill-footer">
+
+                    <span>
+                      Proficiency
+                    </span>
+
+                    <span>
+                      {skill.percentage >= 85
+                        ? "Strong"
+                        : "Growing"}
+                    </span>
 
                   </div>
 

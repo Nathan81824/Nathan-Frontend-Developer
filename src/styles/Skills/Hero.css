@@ -1,106 +1,67 @@
-/* =================================
+/* =========================================================
    SKILLS PAGE
-================================= */
+========================================================= */
 
 .skills-page {
   width: 100%;
   min-height: 100vh;
 
-  background: #ffffff;
-  color: #111827;
-}
-
-
-/* =================================
-   SKILLS HERO
-================================= */
-
-.skills-hero {
-  position: relative;
-
-  min-height: 65vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 110px 0;
-
-  background:
-    radial-gradient(
-      circle at top center,
-      #f1f5f9 0%,
-      #f8fafc 40%,
-      #ffffff 75%
-    );
+  background: #030712;
+  color: #ffffff;
 
   overflow: hidden;
 }
 
 
-/* =================================
-   BACKGROUND DECORATION
-================================= */
+/* =========================================================
+   SKILLS HERO
+========================================================= */
 
-.skills-hero::before {
-  content: "";
+.skills-hero {
+  min-height: 85vh;
 
-  position: absolute;
+  display: flex;
+  align-items: center;
 
-  width: 400px;
-  height: 400px;
+  padding: 100px 0;
 
-  top: -220px;
-  left: -150px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(37, 99, 235, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(14, 165, 233, 0.06),
+      transparent 30%
+    ),
+    #050b16;
 
-  border: 1px solid #e5e7eb;
+  color: #ffffff;
 
-  border-radius: 50%;
-
-  opacity: 0.7;
-}
-
-.skills-hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 350px;
-  height: 350px;
-
-  right: -160px;
-  bottom: -200px;
-
-  border: 1px solid #e5e7eb;
-
-  border-radius: 50%;
-
-  opacity: 0.7;
+  overflow: hidden;
 }
 
 
-/* =================================
+/* =========================================================
    HERO CONTAINER
-================================= */
+========================================================= */
 
 .skills-hero-container {
-  position: relative;
-
-  z-index: 2;
-
   width: 90%;
-  max-width: 1100px;
+  max-width: 1200px;
 
   margin: 0 auto;
 }
 
 
-/* =================================
+/* =========================================================
    HERO CONTENT
-================================= */
+========================================================= */
 
 .skills-hero-content {
-  max-width: 850px;
+  max-width: 1000px;
 
   margin: 0 auto;
 
@@ -108,211 +69,365 @@
 
   animation:
     skillsHeroIn 0.9s
-    cubic-bezier(0.22, 1, 0.36, 1);
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
 }
 
 
-/* =================================
-   LABEL
-================================= */
+/* =========================================================
+   HERO LABEL
+========================================================= */
 
 .skills-hero-label {
   display: inline-flex;
 
   align-items: center;
-  justify-content: center;
-
   gap: 9px;
 
-  margin: 0 0 25px;
+  margin: 0 0 22px;
 
-  padding: 9px 15px;
+  padding: 8px 15px;
 
-  background: #ffffff;
-
-  color: #374151;
-
-  border: 1px solid #e5e7eb;
+  border: 1px solid #1e3a5f;
 
   border-radius: 50px;
 
-  font-size: 12px;
+  background: #0d1829;
 
-  font-weight: 800;
+  color: #38bdf8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
 
   text-transform: uppercase;
-
-  letter-spacing: 2px;
-
-  box-shadow:
-    0 8px 25px rgba(15, 23, 42, 0.05);
 }
 
 
-/* =================================
+/* =========================================================
    LABEL DOT
-================================= */
+========================================================= */
 
 .skills-label-dot {
   width: 7px;
   height: 7px;
 
-  flex-shrink: 0;
-
-  background: #111827;
+  display: block;
 
   border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 10px rgba(56, 189, 248, 0.8);
 
   animation:
     skillsDotPulse 2s ease-in-out infinite;
 }
 
 
-/* =================================
+/* =========================================================
    HERO TITLE
-================================= */
+========================================================= */
 
 .skills-hero-content h1 {
-  margin: 0;
+  margin: 0 auto 25px;
 
-  color: #111827;
+  color: #ffffff;
 
-  font-size: clamp(3.5rem, 8vw, 6.8rem);
+  font-size: clamp(3.5rem, 7vw, 6rem);
 
-  font-weight: 900;
+  font-weight: 850;
 
-  line-height: 0.95;
+  line-height: 0.98;
 
   letter-spacing: -5px;
 }
 
+
+/* =========================================================
+   TITLE SECOND LINE
+========================================================= */
+
 .skills-hero-content h1 span {
   display: block;
 
-  margin-top: 8px;
-
-  color: #6b7280;
+  color: #64748b;
 }
 
 
-/* =================================
+/* =========================================================
    HERO DESCRIPTION
-================================= */
+========================================================= */
 
 .skills-hero-description {
-  max-width: 680px;
+  max-width: 650px;
 
-  margin: 30px auto 0;
+  margin: 0 auto 50px;
 
-  color: #6b7280;
+  color: #94a3b8;
 
-  font-size: 17px;
+  font-size: 18px;
 
   line-height: 1.8;
 }
 
 
-/* =================================
+/* =========================================================
    TECHNOLOGY LIST
-================================= */
+========================================================= */
 
 .skills-tech-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   TECHNOLOGY ITEM
+========================================================= */
+
+.skills-tech-item {
+  position: relative;
+
+  min-height: 120px;
+
   display: flex;
 
-  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 22px;
+
+  text-align: left;
+
+  border: 1px solid #17263b;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d1727,
+      #08111f
+    );
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+
+  cursor: default;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   TECHNOLOGY HOVER
+========================================================= */
+
+.skills-tech-item:hover {
+  transform: translateY(-7px);
+
+  border-color: #2563eb;
+
+  background:
+    linear-gradient(
+      145deg,
+      #101f35,
+      #0a1424
+    );
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   TECHNOLOGY ICON
+========================================================= */
+
+.skills-tech-icon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #1e3a5f;
+
+  border-radius: 12px;
+
+  background: #0b1627;
+
+  color: #38bdf8;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.skills-tech-item:hover .skills-tech-icon {
+  transform:
+    scale(1.08)
+    rotate(-3deg);
+
+  background: #12233b;
+
+  color: #60a5fa;
+}
+
+
+/* =========================================================
+   TECHNOLOGY CONTENT
+========================================================= */
+
+.skills-tech-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.skills-tech-content h3 {
+  margin: 0 0 6px;
+
+  color: #f8fafc;
+
+  font-size: 17px;
+
+  font-weight: 750;
+}
+
+
+.skills-tech-content p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TECHNOLOGY ARROW
+========================================================= */
+
+.skills-tech-arrow {
+  color: #475569;
+
+  font-size: 20px;
+
+  opacity: 0;
+
+  transform: translateX(-8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.skills-tech-item:hover .skills-tech-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+
+  color: #38bdf8;
+}
+
+
+/* =========================================================
+   HERO BOTTOM NOTE
+========================================================= */
+
+.skills-hero-note {
+  display: flex;
 
   align-items: center;
   justify-content: center;
 
   gap: 10px;
 
-  max-width: 800px;
-
-  margin: 42px auto 0;
+  margin-top: 40px;
 }
 
 
-/* =================================
-   TECHNOLOGY ITEM
-================================= */
+.skills-note-dot {
+  width: 8px;
+  height: 8px;
 
-.skills-tech-item {
-  display: flex;
+  border-radius: 50%;
 
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 10px 15px;
-
-  background: rgba(255, 255, 255, 0.85);
-
-  color: #374151;
-
-  border: 1px solid #e5e7eb;
-
-  border-radius: 50px;
-
-  font-size: 13px;
-
-  font-weight: 700;
+  background: #22c55e;
 
   box-shadow:
-    0 6px 18px rgba(15, 23, 42, 0.04);
+    0 0 12px rgba(34, 197, 94, 0.7);
 
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-.skills-tech-item:hover {
-  transform: translateY(-5px);
-
-  background: #ffffff;
-
-  border-color: #9ca3af;
-
-  box-shadow:
-    0 12px 25px rgba(15, 23, 42, 0.09);
+  animation:
+    skillsDotPulse 2s ease-in-out infinite;
 }
 
 
-/* =================================
-   TECHNOLOGY ICON
-================================= */
+.skills-hero-note p {
+  margin: 0;
 
-.skills-tech-item svg {
-  color: #111827;
+  color: #64748b;
 
-  transition:
-    transform 0.3s ease;
-}
+  font-size: 14px;
 
-.skills-tech-item:hover svg {
-  transform:
-    rotate(-8deg)
-    scale(1.1);
+  font-weight: 600;
 }
 
 
-/* =================================
+/* =========================================================
    SKILLS SECTION
-================================= */
+========================================================= */
 
 .skills-section {
-  width: 100%;
+  position: relative;
 
   padding: 110px 0;
 
-  background: #ffffff;
+  background:
+    radial-gradient(
+      circle at 70% 10%,
+      rgba(37, 99, 235, 0.06),
+      transparent 30%
+    ),
+    #030712;
+
+  color: #ffffff;
 }
 
 
-/* =================================
+/* =========================================================
    SKILLS CONTAINER
-================================= */
+========================================================= */
 
 .skills-container {
   width: 90%;
@@ -322,9 +437,53 @@
 }
 
 
-/* =================================
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.skills-section-header {
+  margin-bottom: 50px;
+}
+
+
+.skills-section-header p {
+  margin: 0 0 10px;
+
+  color: #38bdf8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+.skills-section-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+
+.skills-section-header h2 span {
+  color: #64748b;
+}
+
+
+/* =========================================================
    SKILLS GRID
-================================= */
+========================================================= */
 
 .skills-grid {
   display: grid;
@@ -332,77 +491,137 @@
   grid-template-columns:
     repeat(3, 1fr);
 
-  gap: 22px;
+  gap: 24px;
 }
 
 
-/* =================================
+/* =========================================================
    SKILL CARD
-================================= */
+========================================================= */
 
 .skill-card {
   position: relative;
 
-  padding: 30px;
+  min-height: 245px;
 
-  background: #f8fafc;
+  padding: 28px;
 
-  border: 1px solid #e5e7eb;
-
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 
   overflow: hidden;
 
+  border: 1px solid rgba(71, 85, 105, 0.35);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 28, 48, 0.95),
+      rgba(5, 12, 24, 0.98)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.3);
+
   transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.skill-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -100px;
+  right: -100px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  filter: blur(60px);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   CARD SHINE
+========================================================= */
 
 .skill-card::after {
   content: "";
 
   position: absolute;
 
-  width: 130px;
-  height: 130px;
+  top: 0;
+  left: -120%;
 
-  right: -70px;
-  bottom: -70px;
+  width: 80%;
+  height: 100%;
 
-  background: #e5e7eb;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.04),
+      transparent
+    );
 
-  border-radius: 50%;
-
-  opacity: 0;
+  transform: skewX(-20deg);
 
   transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+    left 0.7s ease;
+
+  pointer-events: none;
 }
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
 
 .skill-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 
-  background: #ffffff;
-
-  border-color: #d1d5db;
+  border-color:
+    rgba(56, 189, 248, 0.45);
 
   box-shadow:
-    0 20px 45px rgba(15, 23, 42, 0.09);
+    0 25px 55px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(37, 99, 235, 0.1);
 }
+
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
 
 .skill-card:hover::after {
-  opacity: 0.5;
-
-  transform: scale(1.2);
+  left: 130%;
 }
 
 
-/* =================================
+/* =========================================================
    CARD TOP
-================================= */
+========================================================= */
 
 .skill-card-top {
   position: relative;
@@ -419,65 +638,111 @@
 }
 
 
-/* =================================
+/* =========================================================
    SKILL ICON
-================================= */
+========================================================= */
 
 .skill-icon {
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  background: #111827;
+  border: 1px solid
+    rgba(56, 189, 248, 0.2);
 
-  color: #ffffff;
+  border-radius: 16px;
 
-  border-radius: 14px;
+  background:
+    linear-gradient(
+      145deg,
+      #10233b,
+      #091525
+    );
+
+  color: #38bdf8;
+
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.05),
+    0 8px 20px
+      rgba(0, 0, 0, 0.25);
 
   transition:
-    transform 0.35s ease,
-    background 0.35s ease;
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
 
 .skill-card:hover .skill-icon {
   transform:
-    rotate(-6deg)
-    scale(1.07);
+    translateY(-3px)
+    rotate(-4deg)
+    scale(1.08);
 
-  background: #374151;
+  border-color:
+    rgba(56, 189, 248, 0.5);
+
+  box-shadow:
+    0 0 25px
+      rgba(56, 189, 248, 0.15),
+    0 10px 25px
+      rgba(0, 0, 0, 0.35);
 }
 
 
-/* =================================
+/* =========================================================
    SKILL LEVEL
-================================= */
+========================================================= */
 
 .skill-level {
-  padding: 6px 11px;
+  padding: 7px 12px;
 
-  background: #e5e7eb;
-
-  color: #4b5563;
+  border: 1px solid
+    rgba(100, 116, 139, 0.25);
 
   border-radius: 50px;
 
-  font-size: 10px;
+  background:
+    rgba(15, 23, 42, 0.7);
 
-  font-weight: 800;
+  color: #94a3b8;
 
-  text-transform: uppercase;
+  font-size: 11px;
 
-  letter-spacing: 0.8px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 
-/* =================================
+.skill-card:hover .skill-level {
+  color: #38bdf8;
+
+  border-color:
+    rgba(56, 189, 248, 0.3);
+
+  background:
+    rgba(14, 116, 144, 0.12);
+}
+
+
+/* =========================================================
    SKILL INFO
-================================= */
+========================================================= */
 
 .skill-info {
   position: relative;
@@ -490,35 +755,35 @@
 
   justify-content: space-between;
 
-  gap: 15px;
-
-  margin-bottom: 13px;
+  margin-bottom: 15px;
 }
+
 
 .skill-info h2 {
   margin: 0;
 
-  color: #111827;
+  color: #f8fafc;
 
-  font-size: 20px;
+  font-size: 21px;
 
-  font-weight: 800;
+  font-weight: 750;
 
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
 }
+
 
 .skill-info > span {
-  color: #6b7280;
+  color: #38bdf8;
 
-  font-size: 13px;
+  font-size: 15px;
 
   font-weight: 800;
 }
 
 
-/* =================================
-   SKILL BAR
-================================= */
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
 
 .skill-bar {
   position: relative;
@@ -526,39 +791,110 @@
   z-index: 2;
 
   width: 100%;
-
-  height: 7px;
+  height: 8px;
 
   overflow: hidden;
 
-  background: #e5e7eb;
-
   border-radius: 50px;
+
+  background: #172235;
+
+  box-shadow:
+    inset 0 1px 3px
+      rgba(0, 0, 0, 0.4);
 }
 
 
-/* =================================
-   SKILL PROGRESS
-================================= */
+/* =========================================================
+   PROGRESS
+========================================================= */
 
 .skill-progress {
+  position: relative;
+
   height: 100%;
 
-  background: #111827;
+  border-radius: inherit;
 
-  border-radius: 50px;
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #38bdf8
+    );
 
-  transform-origin: left;
+  box-shadow:
+    0 0 12px
+      rgba(56, 189, 248, 0.35);
 
-  animation:
-    progressIn 1.2s
+  transition:
+    width 1.3s
     cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* =================================
+/* =========================================================
+   PROGRESS SHINE
+========================================================= */
+
+.skill-progress::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 35px;
+  height: 100%;
+
+  background:
+    rgba(255, 255, 255, 0.35);
+
+  filter: blur(8px);
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   SKILL FOOTER
+========================================================= */
+
+.skill-footer {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 14px;
+}
+
+
+.skill-footer span {
+  color: #475569;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+}
+
+
+.skill-footer span:last-child {
+  color: #64748b;
+}
+
+
+/* =========================================================
    HERO ANIMATION
-================================= */
+========================================================= */
 
 @keyframes skillsHeroIn {
 
@@ -566,24 +902,22 @@
     opacity: 0;
 
     transform:
-      translateY(35px)
-      scale(0.97);
+      translateY(35px);
   }
 
   to {
     opacity: 1;
 
     transform:
-      translateY(0)
-      scale(1);
+      translateY(0);
   }
 
 }
 
 
-/* =================================
-   DOT ANIMATION
-================================= */
+/* =========================================================
+   DOT PULSE
+========================================================= */
 
 @keyframes skillsDotPulse {
 
@@ -595,36 +929,24 @@
   }
 
   50% {
-    transform: scale(1.5);
+    transform: scale(1.35);
 
-    opacity: 0.5;
+    opacity: 0.6;
   }
 
 }
 
 
-/* =================================
-   PROGRESS ANIMATION
-================================= */
-
-@keyframes progressIn {
-
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-
-}
-
-
-/* =================================
+/* =========================================================
    TABLET
-================================= */
+========================================================= */
 
 @media (max-width: 1000px) {
+
+  .skills-tech-list {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
 
   .skills-grid {
     grid-template-columns:
@@ -634,16 +956,25 @@
 }
 
 
-/* =================================
+/* =========================================================
    MOBILE
-================================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
   .skills-hero {
     min-height: auto;
 
-    padding: 90px 0 80px;
+    padding: 75px 0;
+  }
+
+  .skills-section {
+    padding: 75px 0;
+  }
+
+  .skills-hero-container,
+  .skills-container {
+    width: 90%;
   }
 
   .skills-hero-content h1 {
@@ -653,91 +984,121 @@
   }
 
   .skills-hero-description {
-    font-size: 15px;
+    font-size: 16px;
 
-    line-height: 1.7;
-
-    margin-top: 25px;
+    margin-bottom: 35px;
   }
 
   .skills-tech-list {
-    margin-top: 32px;
+    grid-template-columns: 1fr;
 
-    gap: 8px;
-  }
-
-  .skills-tech-item {
-    padding: 8px 12px;
-
-    font-size: 12px;
-  }
-
-  .skills-section {
-    padding: 75px 0;
+    gap: 14px;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
 
-    gap: 16px;
+    gap: 18px;
   }
 
-  .skill-card {
-    padding: 25px;
-  }
-
-  .skill-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-}
-
-
-/* =================================
-   SMALL PHONES
-================================= */
-
-@media (max-width: 400px) {
-
-  .skills-hero-content h1 {
+  .skills-section-header h2 {
     font-size: 3rem;
 
     letter-spacing: -2px;
   }
 
   .skills-tech-item {
-    padding: 7px 10px;
+    min-height: 105px;
 
-    font-size: 11px;
+    padding: 18px;
+  }
+
+  .skills-tech-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .skills-tech-content h3 {
+    font-size: 16px;
+  }
+
+  .skills-tech-content p {
+    font-size: 12px;
+  }
+
+  .skills-tech-arrow {
+    opacity: 1;
+
+    transform: none;
+
+    color: #334155;
+  }
+
+  .skill-card {
+    min-height: 225px;
+
+    padding: 24px;
+  }
+
+  .skill-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .skill-info h2 {
+    font-size: 19px;
   }
 
 }
 
 
-/* =================================
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .skills-hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .skills-section-header h2 {
+    font-size: 2.6rem;
+  }
+
+  .skills-tech-item {
+    padding: 15px;
+  }
+
+  .skill-card {
+    padding: 21px;
+  }
+
+}
+
+
+/* =========================================================
    REDUCED MOTION
-================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
-  .skills-hero-content {
-    animation: none;
-  }
-
-  .skills-label-dot {
-    animation: none;
-  }
-
-  .skill-progress {
+  .skills-hero-content,
+  .skills-label-dot,
+  .skills-note-dot {
     animation: none;
   }
 
   .skill-card,
   .skill-icon,
+  .skill-level,
   .skills-tech-item,
-  .skills-tech-item svg,
-  .skill-card::after {
+  .skills-tech-icon,
+  .skills-tech-arrow {
+    transition: none;
+  }
+
+  .skill-progress {
     transition: none;
   }
 

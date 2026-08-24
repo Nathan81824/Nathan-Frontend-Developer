@@ -22,9 +22,13 @@ function AboutHero() {
 
   return (
     <section className="about-hero">
+
       <div className="about-hero-container">
 
-        {/* LEFT - TEXT */}
+        {/* =================================
+            LEFT - CONTENT
+        ================================= */}
+
         <div className="about-hero-content">
 
           <p className="about-hero-label">
@@ -43,23 +47,39 @@ function AboutHero() {
 
         </div>
 
-        {/* RIGHT - IMAGE */}
+
+        {/* =================================
+            RIGHT - IMAGE
+        ================================= */}
+
         <div className="about-hero-image">
 
           <img
             src={aboutImage}
-            alt="About me"
+            alt="Nathan"
           />
 
-          {/* EXPERIENCE / PROJECT BADGE */}
+
+          {/* =================================
+              EXPERIENCE BADGE
+          ================================= */}
+
           <div className="about-stat">
-            <strong>{count}+</strong>
-            <span>Years of Expirience</span>
+
+            <strong>
+              {count}+
+            </strong>
+
+            <span>
+              Years of Experience
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
   );
 }

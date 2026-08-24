@@ -10,7 +10,15 @@
 
   padding: 100px 0;
 
-  background: #f8fafc;
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(37, 99, 235, 0.08),
+      transparent 30%
+    ),
+    #050b16;
+
+  color: #ffffff;
 
   overflow: hidden;
 }
@@ -43,7 +51,8 @@
 .about-hero-content {
   max-width: 650px;
 
-  animation: aboutTextIn 0.9s
+  animation:
+    aboutTextIn 0.9s
     cubic-bezier(0.22, 1, 0.36, 1)
     both;
 }
@@ -58,14 +67,18 @@
 
   margin-bottom: 22px;
 
-  padding: 8px 14px;
+  padding: 8px 15px;
 
-  background: #e5e7eb;
-  color: #374151;
+  background: #0f1b2d;
+
+  color: #38bdf8;
+
+  border: 1px solid #1e3a5f;
 
   border-radius: 50px;
 
-  font-size: 14px;
+  font-size: 13px;
+
   font-weight: 700;
 
   text-transform: uppercase;
@@ -79,11 +92,13 @@
 ================================= */
 
 .about-hero-content h1 {
-  margin-bottom: 25px;
+  margin: 0 0 25px;
 
-  color: #111827;
+  color: #ffffff;
 
   font-size: clamp(3.5rem, 6vw, 5.5rem);
+
+  font-weight: 850;
 
   line-height: 0.98;
 
@@ -98,7 +113,9 @@
 .about-hero-description {
   max-width: 600px;
 
-  color: #6b7280;
+  margin: 0;
+
+  color: #94a3b8;
 
   font-size: 18px;
 
@@ -119,7 +136,8 @@
 
   justify-content: center;
 
-  animation: aboutImageIn 1s
+  animation:
+    aboutImageIn 1s
     cubic-bezier(0.22, 1, 0.36, 1)
     0.15s
     both;
@@ -143,12 +161,15 @@
 
   border-radius: 24px;
 
+  border: 1px solid #1e293b;
+
   box-shadow:
-    0 25px 50px rgba(15, 23, 42, 0.15);
+    0 25px 50px rgba(0, 0, 0, 0.45);
 
   transition:
     transform 0.5s ease,
-    box-shadow 0.5s ease;
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
 }
 
 
@@ -159,13 +180,15 @@
 .about-hero-image:hover img {
   transform: scale(1.02);
 
+  border-color: #334155;
+
   box-shadow:
-    0 30px 60px rgba(15, 23, 42, 0.2);
+    0 30px 65px rgba(0, 0, 0, 0.6);
 }
 
 
 /* =================================
-   PROJECT STAT
+   EXPERIENCE STAT
 ================================= */
 
 .about-stat {
@@ -187,18 +210,25 @@
 
   justify-content: center;
 
-  background: #111827;
+  background:
+    linear-gradient(
+      145deg,
+      #17243a,
+      #0b1424
+    );
 
   color: #ffffff;
 
   border-radius: 50%;
 
-  border: 6px solid #f8fafc;
+  border: 6px solid #050b16;
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.18);
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(37, 99, 235, 0.12);
 
-  animation: statFloat 3s ease-in-out infinite;
+  animation:
+    statFloat 3s ease-in-out infinite;
 
   transition:
     transform 0.3s ease,
@@ -214,7 +244,8 @@
   transform: scale(1.05);
 
   box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.25);
+    0 20px 45px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(37, 99, 235, 0.18);
 }
 
 
@@ -223,11 +254,11 @@
 ================================= */
 
 .about-stat strong {
-  color: #ffffff;
+  color: #38bdf8;
 
   font-size: 32px;
 
-  font-weight: 800;
+  font-weight: 850;
 
   line-height: 1;
 }
@@ -238,19 +269,23 @@
 ================================= */
 
 .about-stat span {
+  max-width: 90px;
+
   margin-top: 7px;
 
-  color: #d1d5db;
+  color: #cbd5e1;
 
-  font-size: 11px;
+  font-size: 10px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   text-align: center;
 
   text-transform: uppercase;
 
   letter-spacing: 0.5px;
+
+  line-height: 1.4;
 }
 
 
@@ -259,6 +294,7 @@
 ================================= */
 
 @keyframes statFloat {
+
   0%,
   100% {
     transform: translateY(0);
@@ -267,6 +303,7 @@
   50% {
     transform: translateY(-7px);
   }
+
 }
 
 
@@ -275,6 +312,7 @@
 ================================= */
 
 @keyframes aboutTextIn {
+
   from {
     opacity: 0;
 
@@ -288,6 +326,7 @@
     transform:
       translateX(0);
   }
+
 }
 
 
@@ -296,6 +335,7 @@
 ================================= */
 
 @keyframes aboutImageIn {
+
   from {
     opacity: 0;
 
@@ -311,6 +351,7 @@
       translateX(0)
       scale(1);
   }
+
 }
 
 
@@ -401,6 +442,30 @@
 
   .about-stat span {
     font-size: 9px;
+  }
+
+}
+
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 400px) {
+
+  .about-hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-stat {
+    width: 95px;
+    height: 95px;
+
+    border-width: 4px;
+  }
+
+  .about-stat strong {
+    font-size: 24px;
   }
 
 }

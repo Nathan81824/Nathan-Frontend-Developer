@@ -14,7 +14,7 @@ function Projects() {
       <section className="projects-section">
         <div className="projects-container">
 
-          <div className="projects-heading">
+          <div className="projects-headingnpm run dev">
             <p>My Work</p>
 
             <h2>Things I've Built</h2>
@@ -69,5 +69,5 @@ function Projects() {
     </main>
   );
 }
-
 export default Projects;
+

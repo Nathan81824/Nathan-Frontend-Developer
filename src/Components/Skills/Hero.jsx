@@ -12,26 +12,32 @@ function SkillsHero() {
     {
       name: "React",
       icon: Atom,
+      description: "Building interactive interfaces",
     },
     {
       name: "JavaScript",
       icon: Braces,
+      description: "Creating dynamic experiences",
     },
     {
       name: "HTML",
       icon: Code2,
+      description: "Writing semantic structure",
     },
     {
       name: "CSS",
       icon: Palette,
+      description: "Designing responsive layouts",
     },
     {
       name: "Git",
       icon: GitBranch,
+      description: "Managing projects and code",
     },
     {
-      name: "Responsive",
+      name: "Responsive Design",
       icon: Smartphone,
+      description: "Building for every screen",
     },
   ];
 
@@ -39,6 +45,10 @@ function SkillsHero() {
     <section className="skills-hero">
 
       <div className="skills-hero-container">
+
+        {/* =================================
+            HERO CONTENT
+        ================================= */}
 
         <div className="skills-hero-content">
 
@@ -61,13 +71,15 @@ function SkillsHero() {
           {/* DESCRIPTION */}
 
           <p className="skills-hero-description">
-            The technologies and tools I use to turn ideas
-            into modern, responsive and interactive web
-            experiences.
+            The technologies and tools I use to transform
+            ideas into modern, responsive and interactive
+            web experiences.
           </p>
 
 
-          {/* TECHNOLOGY LIST */}
+          {/* =================================
+              TECHNOLOGY LIST
+          ================================= */}
 
           <div className="skills-tech-list">
 
@@ -81,16 +93,55 @@ function SkillsHero() {
                   key={technology.name}
                 >
 
-                  <Icon size={18} />
+                  {/* ICON */}
 
-                  <span>
-                    {technology.name}
+                  <div className="skills-tech-icon">
+                    <Icon
+                      size={22}
+                      strokeWidth={1.8}
+                    />
+                  </div>
+
+
+                  {/* TEXT */}
+
+                  <div className="skills-tech-content">
+
+                    <h3>
+                      {technology.name}
+                    </h3>
+
+                    <p>
+                      {technology.description}
+                    </p>
+
+                  </div>
+
+
+                  {/* ARROW */}
+
+                  <span className="skills-tech-arrow">
+                    →
                   </span>
 
                 </div>
               );
-
             })}
+
+          </div>
+
+
+          {/* =================================
+              BOTTOM NOTE
+          ================================= */}
+
+          <div className="skills-hero-note">
+
+            <span className="skills-note-dot"></span>
+
+            <p>
+              Always learning. Always building.
+            </p>
 
           </div>
 
