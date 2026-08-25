@@ -895,136 +895,18 @@
   filter: brightness(1.05);
 }
 
-
 /* =========================================
-   TABLET
+   DESKTOP — HIDE MOBILE MENU
 ========================================= */
 
-@media (max-width: 1000px) {
-
-  .navbar-container {
-    width: 92%;
-
-    gap: 25px;
-  }
-
-  .navbar-links {
-    gap: 22px;
-  }
-
-  .navbar-link {
-    font-size: 13px;
-  }
-
-  .navbar-logo {
-    font-size: 28px;
-  }
-
-  .navbar-resume {
-    min-width: 105px;
-
-    height: 44px;
-
-    padding: 0 19px;
-
-    font-size: 13px;
-  }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 750px) {
-
-  .navbar {
-    min-height: 72px;
-  }
-
-  .navbar-container {
-    width: 92%;
-
-    min-height: 72px;
-
-    padding: 12px 0;
-  }
-
-  .navbar-logo {
-    font-size: 26px;
-  }
-
-  .navbar-links,
-  .navbar-container > .navbar-resume {
-    display: none;
-  }
+@media (min-width: 751px) {
 
   .navbar-menu-button {
-    display: flex;
+    display: none !important;
+  }
+
+  .navbar-mobile-menu {
+    display: none !important;
   }
 
 }
-
-
-/* =========================================
-   SMALL PHONES
-========================================= */
-
-@media (max-width: 450px) {
-
-  .navbar-container {
-    width: 94%;
-  }
-
-  .navbar-logo {
-    font-size: 23px;
-  }
-
-  .navbar-menu-button {
-    width: 43px;
-
-    height: 43px;
-  }
-
-  .navbar-mobile-inner {
-    width: 94%;
-  }
-
-  .navbar-mobile-link,
-  .navbar-mobile-resume {
-    min-height: 49px;
-
-    font-size: 13px;
-  }
-
-}
-
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .navbar::after {
-    animation: none;
-  }
-
-  .navbar-logo,
-  .navbar-link,
-  .navbar-resume,
-  .navbar-menu-button,
-  .navbar-mobile-menu,
-  .navbar-mobile-link,
-  .navbar-mobile-resume {
-    transition: none;
-  }
-
-  .navbar-resume::before,
-  .navbar-mobile-resume::before {
-    transition: none;
-  }
-
-}
-

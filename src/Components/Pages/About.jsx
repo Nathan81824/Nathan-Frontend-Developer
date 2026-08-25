@@ -1,12 +1,43 @@
-import AboutHero from "../About/Hero";
-import MyStory from "../About/MyStory";
+
+import AboutHero from "../About/AboutHero";
+import AboutStory from "../About/AboutStory";
+import AboutSkills from "../About/AboutSkills";
+import AboutJourney from "../About/AboutJourney";
+import AboutCTA from "../About/AboutCTA";
 
 function About() {
   return (
-    <main>
-      <AboutHero/>
+    <main className="about-page">
 
-      <MyStory/>
+      {/* =================================
+          ABOUT HERO
+      ================================= */}
+      <AboutHero />
+
+
+      {/* =================================
+          ABOUT STORY
+      ================================= */}
+      <AboutStory />
+
+
+      {/* =================================
+          ABOUT SKILLS
+      ================================= */}
+      <AboutSkills />
+
+
+      {/* =================================
+          ABOUT JOURNEY
+      ================================= */}
+      <AboutJourney />
+
+
+      {/* =================================
+          ABOUT CTA
+      ================================= */}
+      <AboutCTA />
+
     </main>
   );
 }

@@ -1,0 +1,262 @@
+
+/* =========================================================
+   TABLET NAVBAR
+   650px → 1100px
+
+   Keeps the original navbar design.
+   Only adjusts spacing and sizing.
+========================================================= */
+
+
+/* =========================================================
+   SMALL TABLETS
+   650px → 767px
+========================================================= */
+
+@media (min-width: 650px) and (max-width: 767px) {
+
+  .navbar {
+    min-height: 74px;
+  }
+
+  .navbar-container {
+    width: 93%;
+    max-width: 760px;
+
+    min-height: 74px;
+
+    gap: 14px;
+  }
+
+  .navbar-logo {
+    font-size: 24px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .navbar-links {
+    height: 74px;
+
+    gap: 12px;
+  }
+
+  .navbar-link {
+    font-size: 11px;
+  }
+
+  .navbar-link::after {
+    bottom: 15px;
+  }
+
+  .navbar-resume {
+    min-width: 88px;
+    max-width: 88px;
+
+    height: 39px;
+
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   MEDIUM TABLETS
+   768px → 900px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 900px) {
+
+  .navbar {
+    min-height: 78px;
+  }
+
+  .navbar-container {
+    width: 92%;
+    max-width: 880px;
+
+    min-height: 78px;
+
+    gap: 18px;
+  }
+
+  .navbar-logo {
+    font-size: 26px;
+
+    letter-spacing: -1px;
+  }
+
+  .navbar-links {
+    height: 78px;
+
+    gap: 16px;
+  }
+
+  .navbar-link {
+    font-size: 12px;
+  }
+
+  .navbar-link::after {
+    bottom: 16px;
+  }
+
+  .navbar-resume {
+    min-width: 96px;
+    max-width: 96px;
+
+    height: 41px;
+
+    padding: 0 15px;
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLETS
+   901px → 1100px
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+
+  .navbar {
+    min-height: 82px;
+  }
+
+  .navbar-container {
+    width: 91%;
+    max-width: 1080px;
+
+    min-height: 82px;
+
+    gap: 24px;
+  }
+
+  .navbar-logo {
+    font-size: 29px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .navbar-links {
+    height: 82px;
+
+    gap: 22px;
+  }
+
+  .navbar-link {
+    font-size: 13px;
+  }
+
+  .navbar-link::after {
+    bottom: 17px;
+  }
+
+  .navbar-resume {
+    min-width: 108px;
+    max-width: 108px;
+
+    height: 43px;
+
+    padding: 0 18px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET POSITIONING
+========================================================= */
+
+@media (min-width: 650px) and (max-width: 1100px) {
+
+  .navbar-container {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .navbar-logo {
+    flex-shrink: 0;
+  }
+
+  .navbar-links {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    min-width: 0;
+  }
+
+  .navbar-link {
+    flex-shrink: 0;
+
+    white-space: nowrap;
+  }
+
+  .navbar-resume {
+    flex-shrink: 0;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET MOBILE MENU PROTECTION
+   We do NOT want the mobile menu/button appearing here.
+========================================================= */
+
+@media (min-width: 650px) {
+
+  .navbar-menu-button {
+    display: none !important;
+  }
+
+  .navbar-mobile-menu {
+    display: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (min-width: 650px) and (max-width: 1100px) {
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .navbar::after {
+      animation: none;
+    }
+
+    .navbar-logo,
+    .navbar-link,
+    .navbar-resume {
+      transition: none;
+    }
+
+    .navbar-resume::before {
+      transition: none;
+    }
+
+    .navbar-resume:hover {
+      transform: none;
+    }
+
+  }
+
+}
+

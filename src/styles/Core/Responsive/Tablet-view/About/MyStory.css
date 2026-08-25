@@ -1,0 +1,1545 @@
+/* =========================================
+   MY STORY SECTION
+========================================= */
+
+.my-story {
+    position: relative;
+
+    width: 100%;
+
+    padding: 130px 0 120px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(59, 130, 246, 0.025),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 80%,
+            rgba(37, 99, 235, 0.02),
+            transparent 32%
+        ),
+        #030509;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   TOP LINE
+========================================= */
+
+.my-story::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 82%;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(96, 165, 250, 0.14),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.my-story::after {
+    content: "";
+
+    position: absolute;
+
+    top: 25%;
+    right: -220px;
+
+    width: 440px;
+    height: 440px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.025);
+
+    filter: blur(110px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.my-story-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 88%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.my-story-header {
+    max-width: 780px;
+
+    margin-bottom: 72px;
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    filter:
+        blur(7px);
+
+    animation:
+        story-header-reveal
+        0.9s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        forwards;
+}
+
+
+@keyframes story-header-reveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+        filter:
+            blur(7px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+        filter:
+            blur(0);
+    }
+
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.my-story-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0 0 18px;
+
+    color: #60a5fa;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+.my-story-label span {
+    width: 28px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #60a5fa,
+            transparent
+        );
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.my-story-header h2 {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            3rem,
+            5vw,
+            5rem
+        );
+
+    font-weight: 850;
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+}
+
+
+.my-story-header h2 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff,
+            #bfdbfe 45%,
+            #60a5fa
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.my-story-intro {
+    max-width: 570px;
+
+    margin: 25px 0 0;
+
+    color: #687b91;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.my-story-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.35fr 0.75fr;
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   BIG STORY CARD
+========================================= */
+
+.my-story-main {
+    position: relative;
+
+    min-height: 455px;
+
+    display: grid;
+
+    grid-template-columns:
+        62px 1fr;
+
+    gap: 28px;
+
+    padding: 42px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 16, 28, 0.96),
+            rgba(2, 7, 13, 0.99)
+        );
+
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.10);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 65px
+        rgba(0, 0, 0, 0.38),
+
+        inset 0 1px 0
+        rgba(147, 197, 253, 0.025);
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter: blur(0);
+
+    transition:
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* =========================================
+   MAIN CARD GLOW
+========================================= */
+
+.my-story-main::before {
+    content: "";
+
+    position: absolute;
+
+    top: -170px;
+    right: -150px;
+
+    width: 390px;
+    height: 390px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, 0.085),
+            rgba(37, 99, 235, 0.025) 45%,
+            transparent 72%
+        );
+
+    filter: blur(20px);
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        opacity 0.5s ease;
+}
+
+
+/* =========================================
+   BOTTOM GLOW
+========================================= */
+
+.my-story-main::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    bottom: -120px;
+
+    width: 80%;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.035);
+
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.my-story-main:hover {
+    border-color:
+        rgba(96, 165, 250, 0.17);
+
+    box-shadow:
+        0 32px 75px
+        rgba(0, 0, 0, 0.44),
+
+        0 0 50px
+        rgba(37, 99, 235, 0.025),
+
+        inset 0 1px 0
+        rgba(147, 197, 253, 0.04);
+}
+
+
+.my-story-main:hover::before {
+    transform:
+        scale(1.15)
+        translate(-15px, 15px);
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.my-story-number {
+    position: relative;
+
+    z-index: 3;
+
+    align-self: start;
+
+    color:
+        rgba(96, 165, 250, 0.32);
+
+    font-family:
+        "Fira Code",
+        "Cascadia Code",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.55s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        filter 0.45s ease,
+        color 0.4s ease;
+}
+
+
+.my-story-number::after {
+    content: "";
+
+    display: block;
+
+    width: 31px;
+
+    height: 1px;
+
+    margin-top: 14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(96, 165, 250, 0.35),
+            transparent
+        );
+}
+
+
+/* =========================================
+   STORY TEXT
+========================================= */
+
+.my-story-text {
+    position: relative;
+
+    z-index: 3;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.55s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        filter 0.45s ease;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.my-story-text h3 {
+    margin: 0 0 25px;
+
+    color: #f1f5f9;
+
+    font-size: 29px;
+
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+}
+
+
+.my-story-text h3 span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #93c5fd;
+}
+
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.my-story-paragraphs {
+    max-width: 650px;
+}
+
+
+.my-story-text p {
+    margin: 0 0 18px;
+
+    color: #71839a;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.my-story-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   STORY EXIT
+========================================= */
+
+.my-story-main.story-changing
+.my-story-text {
+    opacity: 0;
+
+    transform:
+        translate3d(
+            -14px,
+            18px,
+            0
+        )
+        scale(0.985);
+
+    filter:
+        blur(7px);
+}
+
+
+.my-story-main.story-changing
+.my-story-number {
+    opacity: 0;
+
+    transform:
+        translate3d(
+            0,
+            -15px,
+            0
+        )
+        scale(0.8);
+
+    filter:
+        blur(6px);
+}
+
+
+/* =========================================
+   STORY ENTER
+========================================= */
+
+.my-story-main.story-entering
+.my-story-text {
+    animation:
+        story-text-enter
+        0.8s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        forwards;
+}
+
+
+.my-story-main.story-entering
+.my-story-number {
+    animation:
+        story-number-enter
+        0.7s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        forwards;
+}
+
+
+/* =========================================
+   TEXT ENTER
+========================================= */
+
+@keyframes story-text-enter {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                25px,
+                25px,
+                0
+            )
+            scale(0.975);
+
+        filter:
+            blur(8px);
+    }
+
+    55% {
+        opacity: 1;
+
+        transform:
+            translate3d(
+                -3px,
+                -2px,
+                0
+            )
+            scale(1.005);
+
+        filter:
+            blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+/* =========================================
+   NUMBER ENTER
+========================================= */
+
+@keyframes story-number-enter {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                0,
+                -20px,
+                0
+            )
+            scale(0.7);
+
+        filter:
+            blur(7px);
+    }
+
+    55% {
+        opacity: 1;
+
+        transform:
+            translate3d(
+                0,
+                3px,
+                0
+            )
+            scale(1.08);
+
+        filter:
+            blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+/* =========================================
+   THREE RIGHT CARDS
+========================================= */
+
+.my-story-side {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   MINI CARD
+========================================= */
+
+.story-mini-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    min-height: 0;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 16, 28, 0.96),
+            rgba(2, 7, 13, 0.99)
+        );
+
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.09);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.30),
+
+        inset 0 1px 0
+        rgba(147, 197, 253, 0.025);
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+
+    animation:
+        mini-card-reveal
+        0.8s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        both;
+
+    animation-delay:
+        var(--card-delay);
+
+    transition:
+        transform 0.5s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* =========================================
+   MINI CARD REVEAL
+========================================= */
+
+@keyframes mini-card-reveal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.96);
+
+        filter:
+            blur(6px);
+    }
+
+    65% {
+        opacity: 1;
+
+        transform:
+            translateY(-3px)
+            scale(1.01);
+
+        filter:
+            blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+/* =========================================
+   MINI CARD GLOW
+========================================= */
+
+.story-mini-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100px;
+    right: -90px;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, 0.10),
+            rgba(37, 99, 235, 0.025) 45%,
+            transparent 72%
+        );
+
+    filter:
+        blur(20px);
+
+    opacity: 0.5;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.7s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        opacity 0.5s ease;
+}
+
+
+/* =========================================
+   MINI CARD HOVER
+========================================= */
+
+.story-mini-card:hover {
+    transform:
+        translateY(-6px)
+        translateX(3px);
+
+    border-color:
+        rgba(96, 165, 250, 0.20);
+
+    box-shadow:
+        0 22px 45px
+        rgba(0, 0, 0, 0.40),
+
+        0 0 35px
+        rgba(37, 99, 235, 0.025);
+}
+
+
+.story-mini-card:hover::before {
+    opacity: 1;
+
+    transform:
+        scale(1.25)
+        translate(-10px, 10px);
+}
+
+
+/* =========================================
+   MINI ICON
+========================================= */
+
+.story-mini-icon {
+    position: relative;
+
+    z-index: 2;
+
+    flex-shrink: 0;
+
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #93c5fd;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.13),
+            rgba(30, 64, 175, 0.045)
+        );
+
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.13);
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 8px 22px
+        rgba(37, 99, 235, 0.05);
+
+    transition:
+        transform 0.45s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.story-mini-card:hover
+.story-mini-icon {
+    transform:
+        translateY(-3px)
+        rotate(-5deg)
+        scale(1.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.20),
+            rgba(30, 64, 175, 0.08)
+        );
+
+    border-color:
+        rgba(147, 197, 253, 0.25);
+
+    box-shadow:
+        0 12px 28px
+        rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================
+   MINI CONTENT
+========================================= */
+
+.story-mini-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+
+.story-mini-content h3 {
+    margin: 2px 0 7px;
+
+    color: #e8eef6;
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    line-height: 1.3;
+
+    letter-spacing: -0.2px;
+}
+
+
+.story-mini-content p {
+    margin: 0;
+
+    color: #687b91;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.my-story-bottom {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 65px;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    filter:
+        blur(6px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        filter 0.8s ease;
+}
+
+
+.my-story-bottom.story-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+}
+
+
+/* =========================================
+   BOTTOM LINE
+========================================= */
+
+.story-bottom-line {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(96, 165, 250, 0.12)
+        );
+}
+
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.my-story-bottom p {
+    margin: 0;
+
+    color: #64768b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+.my-story-bottom p span {
+    color: #93c5fd;
+}
+
+
+/* =========================================
+   BOTTOM ICON
+========================================= */
+
+.story-bottom-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #93c5fd;
+
+    background:
+        rgba(59, 130, 246, 0.045);
+
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.11);
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.45s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.story-bottom-icon:hover {
+    transform:
+        translate(
+            3px,
+            -3px
+        );
+
+    background:
+        rgba(59, 130, 246, 0.10);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .my-story {
+        padding:
+            100px 0;
+    }
+
+
+    .my-story-grid {
+        grid-template-columns:
+            1fr;
+
+        gap: 22px;
+    }
+
+
+    .my-story-side {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        grid-template-rows:
+            1fr;
+
+        gap: 14px;
+    }
+
+
+    .story-mini-card {
+        flex-direction:
+            column;
+
+        gap: 13px;
+
+        padding: 21px;
+    }
+
+
+    .story-mini-card:hover {
+        transform:
+            translateY(-5px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .my-story {
+        padding:
+            80px 0 90px;
+    }
+
+
+    .my-story-container {
+        width: 92%;
+    }
+
+
+    .my-story-header {
+        margin-bottom:
+            45px;
+    }
+
+
+    .my-story-header h2 {
+        font-size:
+            3rem;
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    .my-story-intro {
+        font-size:
+            13px;
+
+        line-height:
+            1.8;
+    }
+
+
+    /* BIG STORY */
+
+    .my-story-main {
+        min-height:
+            510px;
+
+        grid-template-columns:
+            1fr;
+
+        gap: 18px;
+
+        padding:
+            27px;
+
+        border-radius:
+            19px;
+    }
+
+
+    .my-story-number {
+        font-size:
+            11px;
+    }
+
+
+    .my-story-number::after {
+        display:
+            none;
+    }
+
+
+    .my-story-text h3 {
+        font-size:
+            23px;
+
+        margin-bottom:
+            20px;
+    }
+
+
+    .my-story-text p {
+        font-size:
+            13px;
+
+        line-height:
+            1.8;
+
+        margin-bottom:
+            15px;
+    }
+
+
+    /* RIGHT CARDS */
+
+    .my-story-side {
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+    }
+
+
+    .story-mini-card {
+        flex-direction:
+            row;
+
+        align-items:
+            flex-start;
+
+        padding:
+            20px;
+
+        border-radius:
+            16px;
+    }
+
+
+    .story-mini-icon {
+        width:
+            43px;
+
+        height:
+            43px;
+    }
+
+
+    .story-mini-content h3 {
+        font-size:
+            14px;
+    }
+
+
+    .story-mini-content p {
+        font-size:
+            11px;
+    }
+
+
+    /* BOTTOM */
+
+    .my-story-bottom {
+        gap:
+            12px;
+
+        margin-top:
+            45px;
+    }
+
+
+    .story-bottom-line {
+        display:
+            none;
+    }
+
+
+    .my-story-bottom p {
+        flex:
+            1;
+
+        font-size:
+            10px;
+
+        text-align:
+            left;
+    }
+
+
+    .story-bottom-icon {
+        width:
+            34px;
+
+        height:
+            34px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+    .my-story-header h2 {
+        font-size:
+            2.65rem;
+
+        letter-spacing:
+            -1.8px;
+    }
+
+
+    .my-story-main {
+        min-height:
+            530px;
+
+        padding:
+            22px;
+    }
+
+
+    .my-story-text h3 {
+        font-size:
+            21px;
+    }
+
+
+    .my-story-text p {
+        font-size:
+            12px;
+    }
+
+
+    .story-mini-card {
+        padding:
+            18px;
+    }
+
+
+    .story-mini-icon {
+        width:
+            40px;
+
+        height:
+            40px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .my-story-header,
+    .my-story-main,
+    .story-mini-card,
+    .my-story-bottom,
+    .my-story-text,
+    .my-story-number,
+    .story-mini-icon,
+    .story-bottom-icon {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        filter:
+            none !important;
+    }
+
+
+    .my-story-header,
+    .my-story-main,
+    .story-mini-card,
+    .my-story-bottom {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+    }
+
+
+    .my-story-main.story-changing
+    .my-story-text,
+
+    .my-story-main.story-changing
+    .my-story-number {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+        filter:
+            none;
+    }
+
+}

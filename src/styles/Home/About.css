@@ -1,0 +1,1031 @@
+/* =========================================================
+   HOME ABOUT SECTION
+   DARK PREMIUM DESKTOP DESIGN
+========================================================= */
+
+.home-about {
+  position: relative;
+
+  padding: 125px 0;
+
+  background:
+    radial-gradient(
+      circle at 8% 25%,
+      rgba(37, 99, 235, 0.055),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 75%,
+      rgba(30, 64, 175, 0.045),
+      transparent 30%
+    ),
+    #02050a;
+
+  color: var(--color-text-primary);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.home-about-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(100px);
+
+  opacity: 0.55;
+}
+
+.home-about-glow-one {
+  width: 300px;
+  height: 300px;
+
+  top: 10%;
+  left: -220px;
+
+  background:
+    rgba(37, 99, 235, 0.07);
+}
+
+.home-about-glow-two {
+  width: 350px;
+  height: 350px;
+
+  right: -240px;
+  bottom: -120px;
+
+  background:
+    rgba(30, 64, 175, 0.06);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.home-about-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.home-about-heading {
+  max-width: 760px;
+
+  margin-bottom: 70px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.home-about-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 18px;
+
+  color: var(--color-primary-bright);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2.2px;
+}
+
+.home-about-label span {
+  width: 32px;
+  height: 1px;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--color-primary-bright)
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(59, 130, 246, 0.35);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.home-about-heading h2 {
+  margin: 0 0 22px;
+
+  color: #f8fafc;
+
+  font-size:
+    clamp(
+      3.8rem,
+      6vw,
+      6rem
+    );
+
+  font-weight: 850;
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+}
+
+.home-about-heading h2 span {
+  display: block;
+
+  color: #334155;
+}
+
+
+/* =========================================================
+   INTRO TEXT
+========================================================= */
+
+.home-about-heading > p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.home-about-content {
+  display: grid;
+
+  grid-template-columns:
+    0.95fr
+    1.05fr;
+
+  gap: 65px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   INTRO CARD
+========================================================= */
+
+.home-about-intro {
+  position: relative;
+
+  min-height: 470px;
+
+  padding: 34px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.72),
+      rgba(3, 7, 14, 0.88)
+    );
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.08);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.45),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   CARD BLUE GLOW
+========================================================= */
+
+.home-about-intro::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -130px;
+  right: -100px;
+
+  background:
+    rgba(37, 99, 235, 0.075);
+
+  border-radius: 50%;
+
+  filter: blur(55px);
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+/* =========================================================
+   CARD TOP LINE
+========================================================= */
+
+.home-about-intro::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 35px;
+  right: 35px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(59, 130, 246, 0.30),
+      transparent
+    );
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   INTRO HOVER
+========================================================= */
+
+.home-about-intro:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(96, 165, 250, 0.18);
+
+  box-shadow:
+    0 35px 85px
+    rgba(0, 0, 0, 0.55),
+
+    0 0 45px
+    rgba(37, 99, 235, 0.045),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+}
+
+.home-about-intro:hover::before {
+  transform:
+    scale(1.25);
+}
+
+
+/* =========================================================
+   INTRO ICON
+========================================================= */
+
+.home-about-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 34px;
+
+  color:
+    #60a5fa;
+
+  background:
+    rgba(30, 64, 175, 0.10);
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.16);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 25px
+    rgba(37, 99, 235, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.home-about-intro:hover .home-about-icon {
+  transform:
+    translateY(-3px)
+    scale(1.04);
+
+  background:
+    rgba(37, 99, 235, 0.14);
+
+  border-color:
+    rgba(96, 165, 250, 0.28);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.home-about-number {
+  position: absolute;
+
+  top: 34px;
+  right: 34px;
+
+  color:
+    rgba(100, 116, 139, 0.22);
+
+  font-family:
+    var(--font-code);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   INTRO HEADING
+========================================================= */
+
+.home-about-intro h3 {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 500px;
+
+  margin: 0 0 25px;
+
+  color:
+    #f1f5f9;
+
+  font-size: 38px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.home-about-intro h3 span {
+  display: block;
+
+  color:
+    #64748b;
+}
+
+
+/* =========================================================
+   INTRO PARAGRAPHS
+========================================================= */
+
+.home-about-intro p {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 560px;
+
+  margin: 0 0 16px;
+
+  color:
+    #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   ABOUT LINK
+========================================================= */
+
+.home-about-link {
+  position: relative;
+
+  z-index: 3;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 13px;
+
+  padding: 12px 0;
+
+  color:
+    #60a5fa;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.home-about-link:hover {
+  color:
+    #bfdbfe;
+
+  transform:
+    translateX(5px);
+
+  text-shadow:
+    0 0 18px
+    rgba(96, 165, 250, 0.25);
+}
+
+
+/* =========================================================
+   FEATURE CARD
+========================================================= */
+
+.home-about-feature {
+  position: relative;
+
+  min-height: 470px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding: 32px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10, 20, 36, 0.82),
+      rgba(2, 6, 12, 0.94)
+    );
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.08);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.48),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   FEATURE GLOW
+========================================================= */
+
+.home-about-feature::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -150px;
+  top: -150px;
+
+  background:
+    rgba(37, 99, 235, 0.065);
+
+  border-radius: 50%;
+
+  filter: blur(55px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FEATURE TOP LINE
+========================================================= */
+
+.home-about-feature::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 35px;
+  right: 35px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(96, 165, 250, 0.28),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   FEATURE HOVER
+========================================================= */
+
+.home-about-feature:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(96, 165, 250, 0.18);
+
+  box-shadow:
+    0 35px 85px
+    rgba(0, 0, 0, 0.58),
+
+    0 0 45px
+    rgba(37, 99, 235, 0.045),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   FEATURE TOP
+========================================================= */
+
+.home-about-feature-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding-bottom: 25px;
+
+  border-bottom:
+    1px solid
+    rgba(148, 163, 184, 0.07);
+}
+
+.home-about-feature-top > span {
+  color:
+    #475569;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.home-about-feature-icon {
+  width: 47px;
+  height: 47px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color:
+    #60a5fa;
+
+  background:
+    rgba(30, 64, 175, 0.09);
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.15);
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 0 22px
+    rgba(37, 99, 235, 0.05);
+}
+
+
+/* =========================================================
+   FEATURE CONTENT
+========================================================= */
+
+.home-about-feature-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+
+  padding: 30px 0;
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.home-about-feature-item {
+  display: grid;
+
+  grid-template-columns:
+    42px
+    1fr;
+
+  gap: 18px;
+
+  align-items: start;
+}
+
+.home-about-feature-item > strong {
+  padding-top: 2px;
+
+  color:
+    rgba(96, 165, 250, 0.40);
+
+  font-family:
+    var(--font-code);
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.home-about-feature-item h4 {
+  margin: 0 0 7px;
+
+  color:
+    #e2e8f0;
+
+  font-size: 17px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
+}
+
+.home-about-feature-item p {
+  max-width: 450px;
+
+  margin: 0;
+
+  color:
+    #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FEATURE FOOTER
+========================================================= */
+
+.home-about-feature-footer {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid
+    rgba(148, 163, 184, 0.07);
+
+  color:
+    #334155;
+
+  font-family:
+    var(--font-code);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.home-about-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    #64748b;
+}
+
+.home-about-status i {
+  width: 6px;
+  height: 6px;
+
+  display: block;
+
+  background:
+    #3b82f6;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 10px
+    rgba(59, 130, 246, 0.65);
+
+  animation:
+    aboutStatusPulse
+    2.2s
+    ease-in-out
+    infinite;
+}
+
+
+/* =========================================================
+   STATUS ANIMATION
+========================================================= */
+
+@keyframes aboutStatusPulse {
+
+  0%,
+  100% {
+    opacity: 0.45;
+
+    transform:
+      scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.15);
+  }
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.home-about-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  margin-top: 70px;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid
+    rgba(148, 163, 184, 0.07);
+}
+
+
+/* =========================================================
+   STAT
+========================================================= */
+
+.home-about-stat {
+  position: relative;
+
+  padding:
+    0 25px;
+
+  text-align: center;
+}
+
+.home-about-stat:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 5px;
+  right: 0;
+
+  width: 1px;
+  height: 45px;
+
+  background:
+    rgba(148, 163, 184, 0.08);
+}
+
+.home-about-stat strong {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color:
+    #60a5fa;
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
+}
+
+.home-about-stat span {
+  color:
+    #334155;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .home-about {
+    padding: 145px 0;
+  }
+
+  .home-about-container {
+    max-width: 1450px;
+  }
+
+  .home-about-content {
+    gap: 90px;
+  }
+
+  .home-about-intro,
+  .home-about-feature {
+    min-height: 500px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY LARGE DESKTOP / TV
+========================================================= */
+
+@media (min-width: 1800px) {
+
+  .home-about-container {
+    max-width: 1600px;
+  }
+
+  .home-about-content {
+    grid-template-columns:
+      0.9fr
+      1.1fr;
+
+    gap: 105px;
+  }
+
+  .home-about-heading h2 {
+    font-size: 6.5rem;
+  }
+
+  .home-about-intro h3 {
+    font-size: 44px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-about-intro,
+  .home-about-feature,
+  .home-about-icon,
+  .home-about-link {
+    transition: none;
+  }
+
+  .home-about-intro:hover,
+  .home-about-feature:hover {
+    transform: none;
+  }
+
+  .home-about-status i {
+    animation: none;
+  }
+
+}
+

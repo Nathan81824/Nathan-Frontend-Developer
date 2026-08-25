@@ -116,7 +116,7 @@ function MiniStoryCard({
    MY STORY
 ========================================================= */
 
-function MyStory() {
+function AboutStory() {
 
   const storyRef = useRef(null);
 
@@ -595,4 +595,4 @@ function MyStory() {
 }
 
 
-export default MyStory;
+export default AboutStory;

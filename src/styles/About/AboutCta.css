@@ -1,0 +1,572 @@
+/* =========================================
+   ABOUT CTA
+========================================= */
+
+.about-cta {
+  position: relative;
+
+  width: 100%;
+
+  padding: 120px 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 50%,
+      rgba(37, 99, 235, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(30, 64, 175, 0.07),
+      transparent 32%
+    ),
+    #040914;
+
+  color:
+    var(--color-text-primary);
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.about-cta::before {
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+  left: -220px;
+
+  width: 450px;
+  height: 450px;
+
+  background:
+    rgba(37, 99, 235, 0.07);
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.about-cta::after {
+  content: "";
+
+  position: absolute;
+
+  right: -230px;
+  bottom: -230px;
+
+  width: 480px;
+  height: 480px;
+
+  background:
+    rgba(30, 64, 175, 0.06);
+
+  border-radius: 50%;
+
+  filter: blur(110px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.about-cta-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+
+  max-width: 1250px;
+
+  min-height: 300px;
+
+  margin: 0 auto;
+
+  padding: 55px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b1424,
+      #050a13
+    );
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.13);
+
+  border-radius:
+    24px;
+
+  backdrop-filter:
+    blur(var(--glass-blur-heavy));
+
+  -webkit-backdrop-filter:
+    blur(var(--glass-blur-heavy));
+
+  box-shadow:
+    var(--shadow-xl),
+
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   TOP BLUE LINE
+========================================= */
+
+.about-cta-container::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 45px;
+  right: 45px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(96, 165, 250, 0.45),
+      rgba(147, 197, 253, 0.20),
+      transparent
+    );
+}
+
+
+/* =========================================
+   INNER GLOW
+========================================= */
+
+.about-cta-container::after {
+  content: "";
+
+  position: absolute;
+
+  right: 20%;
+
+  top: 50%;
+
+  width: 300px;
+  height: 300px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    rgba(37, 99, 235, 0.035);
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.about-cta-content {
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 700px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.about-cta-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin:
+    0 0 18px;
+
+  color:
+    var(--color-primary-bright);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.about-cta-label span {
+  width: 32px;
+  height: 1px;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--color-primary-bright)
+    );
+
+  box-shadow:
+    0 0 12px
+    rgba(59, 130, 246, 0.40);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.about-cta-title {
+  margin:
+    0 0 20px;
+
+  color:
+    var(--color-text-primary);
+
+  font-size:
+    clamp(
+      3.5rem,
+      5vw,
+      5.4rem
+    );
+
+  font-weight: 850;
+
+  line-height: 0.92;
+
+  letter-spacing: -4px;
+}
+
+.about-cta-title span {
+  display: block;
+
+  color:
+    var(--color-text-muted);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.about-cta-description {
+  max-width: 590px;
+
+  margin: 0;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   ACTION CARD
+========================================= */
+
+.about-cta-action {
+  position: relative;
+
+  z-index: 3;
+
+  min-width: 275px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 21px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d1a2d,
+      #07101d
+    );
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.15);
+
+  border-radius:
+    17px;
+
+  backdrop-filter:
+    blur(var(--glass-blur));
+
+  -webkit-backdrop-filter:
+    blur(var(--glass-blur));
+
+  box-shadow:
+    var(--shadow-lg),
+
+    0 0 30px
+    rgba(37, 99, 235, 0.05);
+
+  transition:
+    transform var(--transition-smooth),
+    border-color var(--transition-normal),
+    background var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+
+/* =========================================
+   ACTION HOVER
+========================================= */
+
+.about-cta-action:hover {
+  transform:
+    translateY(-6px);
+
+  background:
+    linear-gradient(
+      145deg,
+      #10233d,
+      #081321
+    );
+
+  border-color:
+    rgba(96, 165, 250, 0.30);
+
+  box-shadow:
+    var(--shadow-blue),
+    var(--shadow-lg);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.about-cta-icon {
+  width: 52px;
+  height: 52px;
+
+  min-width: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color:
+    var(--color-primary-bright);
+
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.18);
+
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 0 25px
+    rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================
+   ACTION CONTENT
+========================================= */
+
+.about-cta-action-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.about-cta-action-content > span {
+  color:
+    var(--color-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   CONTACT BUTTON
+========================================= */
+
+.about-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  width: fit-content;
+
+  color:
+    var(--color-primary-bright);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    text-shadow var(--transition-fast);
+}
+
+.about-cta-button:hover {
+  color:
+    var(--color-text-primary);
+
+  transform:
+    translateX(3px);
+
+  text-shadow:
+    0 0 15px
+    rgba(96, 165, 250, 0.30);
+}
+
+.about-cta-button svg {
+  transition:
+    transform var(--transition-fast);
+}
+
+.about-cta-button:hover svg {
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1400px) {
+
+  .about-cta {
+    padding:
+      145px 0;
+  }
+
+  .about-cta-container {
+    max-width:
+      1450px;
+
+    min-height:
+      340px;
+
+    padding:
+      65px 70px;
+  }
+
+  .about-cta-title {
+    font-size:
+      6rem;
+  }
+
+}
+
+
+/* =========================================
+   VERY LARGE DESKTOP / TV
+========================================= */
+
+@media (min-width: 1800px) {
+
+  .about-cta-container {
+    max-width:
+      1600px;
+
+    min-height:
+      380px;
+
+    padding:
+      75px 85px;
+
+    gap:
+      110px;
+  }
+
+  .about-cta-title {
+    font-size:
+      6.8rem;
+  }
+
+  .about-cta-action {
+    min-width:
+      310px;
+
+    padding:
+      24px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-cta-action,
+  .about-cta-button {
+    transition: none;
+  }
+
+  .about-cta-action:hover,
+  .about-cta-button:hover {
+    transform: none;
+  }
+
+}
