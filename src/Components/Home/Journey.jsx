@@ -6,7 +6,6 @@ import {
   Sparkles,
 } from "lucide-react";
 
-
 function Journey() {
   const journey = [
     {
@@ -49,6 +48,11 @@ function Journey() {
   return (
     <section className="journey-section" id="journey">
 
+      {/* BACKGROUND GLOW */}
+
+      <div className="journey-glow journey-glow-one" />
+      <div className="journey-glow journey-glow-two" />
+
       <div className="journey-container">
 
         {/* =================================
@@ -57,9 +61,10 @@ function Journey() {
 
         <div className="journey-heading">
 
-          <p className="journey-label">
+          <div className="journey-label">
+            <span className="journey-label-line" />
             My Journey
-          </p>
+          </div>
 
           <h2>
             From Learning
@@ -87,41 +92,71 @@ function Journey() {
             return (
               <article
                 className="journey-item"
-                key={index}
+                key={`${item.year}-${item.title}`}
               >
 
                 {/* TIMELINE LINE */}
 
                 {index !== journey.length - 1 && (
-                  <div className="journey-line"></div>
+                  <div className="journey-line">
+                    <span />
+                  </div>
                 )}
 
 
                 {/* ICON */}
 
-                <div className="journey-icon">
-                  <Icon
-                    size={22}
-                    strokeWidth={1.8}
-                  />
+                <div className="journey-icon-wrap">
+
+                  <div className="journey-icon">
+                    <Icon
+                      size={22}
+                      strokeWidth={1.7}
+                    />
+                  </div>
+
                 </div>
 
 
-                {/* CONTENT */}
+                {/* CARD */}
 
-                <div className="journey-content">
+                <div className="journey-card">
 
-                  <span className="journey-year">
-                    {item.year}
-                  </span>
+                  <div className="journey-card-top">
 
-                  <h3>
-                    {item.title}
-                  </h3>
+                    <span className="journey-year">
+                      {item.year}
+                    </span>
 
-                  <p>
-                    {item.description}
-                  </p>
+                    <span className="journey-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                  </div>
+
+
+                  <div className="journey-content">
+
+                    <h3>
+                      {item.title}
+                    </h3>
+
+                    <p>
+                      {item.description}
+                    </p>
+
+                  </div>
+
+
+                  <div className="journey-card-bottom">
+
+                    <span>
+                      Frontend Development
+                    </span>
+
+                    <span className="journey-dot" />
+
+                  </div>
 
                 </div>
 
@@ -138,3 +173,4 @@ function Journey() {
 }
 
 export default Journey;
+

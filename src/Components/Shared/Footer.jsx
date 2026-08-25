@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  
 
   return (
     <footer className="footer">
 
       <div className="footer-container">
+        
 
         {/* =========================
             TOP SECTION
@@ -17,12 +19,12 @@ function Footer() {
           {/* BRAND */}
           <div className="footer-brand">
 
-            <Link
-              to="/"
-              className="footer-logo"
-            >
-              My Portfolio<span>.</span>
-            </Link>
+        <Link
+      to="/"
+      className="navbar-logo"
+    >
+      Nathan
+    </Link>
 
             <p className="footer-description">
               Frontend developer focused on building

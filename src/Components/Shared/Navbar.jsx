@@ -1,19 +1,31 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import clsx from "clsx";
 
 function Navbar() {
 const [menuOpen, setMenuOpen] = useState(false);
+
+const navItems = [
+{ name: "Home", path: "/" },
+{ name: "About", path: "/about" },
+{ name: "Skills", path: "/skill" },
+{ name: "Projects", path: "/projects" },
+{ name: "Services", path: "/services" },
+{ name: "Contact", path: "/contact" },
+];
 
 const closeMenu = () => {
 setMenuOpen(false);
 };
 
-return ( <nav className="navbar"> <div className="navbar-container">
+return (
+<nav className="navbar">
 
-    {/* =================================
-        LOGO
-    ================================= */}
+  <div className="navbar-container">
+
+    {/* LOGO */}
 
     <Link
       to="/"
@@ -24,84 +36,54 @@ return ( <nav className="navbar"> <div className="navbar-container">
     </Link>
 
 
-    {/* =================================
-        DESKTOP NAVIGATION
-    ================================= */}
+    {/* DESKTOP NAVIGATION */}
 
     <div className="navbar-links">
 
-      <NavLink
-        to="/"
-        end
-        className="navbar-link"
-      >
-        Home
-      </NavLink>
-
-      <NavLink
-        to="/about"
-        className="navbar-link"
-      >
-        About
-      </NavLink>
-
-      <NavLink
-        to="/skill"
-        className="navbar-link"
-      >
-        Skills
-      </NavLink>
-
-      <NavLink
-        to="/projects"
-        className="navbar-link"
-      >
-        Projects
-      </NavLink>
-
-      <NavLink
-        to="/services"
-        className="navbar-link"
-      >
-        Services
-      </NavLink>
-
-      <NavLink
-        to="/contact"
-        className="navbar-link"
-      >
-        Contact
-      </NavLink>
+      {navItems.map((item) => (
+        <NavLink
+          key={item.path}
+          to={item.path}
+          end={item.path === "/"}
+          className={({ isActive }) =>
+            clsx(
+              "navbar-link",
+              isActive && "active"
+            )
+          }
+        >
+          {item.name}
+        </NavLink>
+      ))}
 
     </div>
 
 
-    {/* =================================
-        DESKTOP RESUME
-    ================================= */}
+    {/* DESKTOP RESUME */}
 
     <Link
       to="/contact"
       className="navbar-resume"
     >
-      Resume
+      <span>Resume</span>
+
+      <ArrowUpRight
+        size={17}
+        strokeWidth={2.2}
+      />
     </Link>
 
 
-    {/* =================================
-        MOBILE MENU BUTTON
-    ================================= */}
+    {/* MOBILE MENU BUTTON */}
 
-    <button
+    <motion.button
       type="button"
-      className={`navbar-menu-button ${
-        menuOpen
-          ? "menu-open"
-          : ""
-      }`}
-      onClick={() =>
-        setMenuOpen(!menuOpen)
-      }
+      className={clsx(
+        "navbar-menu-button",
+        menuOpen && "menu-open"
+      )}
+      onClick={() => setMenuOpen((prev) => !prev)}
+      whileTap={{ scale: 0.92 }}
       aria-label={
         menuOpen
           ? "Close navigation menu"
@@ -109,92 +91,197 @@ return ( <nav className="navbar"> <div className="navbar-container">
       }
       aria-expanded={menuOpen}
     >
-      {menuOpen ? (
-        <X
-          size={25}
-          strokeWidth={2}
-        />
-      ) : (
-        <Menu
-          size={25}
-          strokeWidth={2}
-        />
-      )}
-    </button>
+
+      <AnimatePresence mode="wait" initial={false}>
+
+        {menuOpen ? (
+          <motion.span
+            key="close"
+            initial={{
+              opacity: 0,
+              rotate: -90,
+              scale: 0.7,
+            }}
+            animate={{
+              opacity: 1,
+              rotate: 0,
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+              rotate: 90,
+              scale: 0.7,
+            }}
+            transition={{
+              duration: 0.22,
+            }}
+          >
+            <X
+              size={24}
+              strokeWidth={2}
+            />
+          </motion.span>
+        ) : (
+          <motion.span
+            key="menu"
+            initial={{
+              opacity: 0,
+              rotate: 90,
+              scale: 0.7,
+            }}
+            animate={{
+              opacity: 1,
+              rotate: 0,
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+              rotate: -90,
+              scale: 0.7,
+            }}
+            transition={{
+              duration: 0.22,
+            }}
+          >
+            <Menu
+              size={24}
+              strokeWidth={2}
+            />
+          </motion.span>
+        )}
+
+      </AnimatePresence>
+
+    </motion.button>
 
   </div>
 
 
-  {/* =================================
-      MOBILE MENU
-  ================================= */}
+  {/* MOBILE MENU */}
 
-  <div
-    className={`mobile-menu ${
-      menuOpen
-        ? "mobile-menu-open"
-        : ""
-    }`}
-  >
+  <AnimatePresence>
 
-    <NavLink
-      to="/"
-      end
-      className="mobile-menu-link"
-      onClick={closeMenu}
-    >
-      Home
-    </NavLink>
+    {menuOpen && (
+      <motion.div
+        className="navbar-mobile-menu"
+        initial={{
+          opacity: 0,
+          height: 0,
+        }}
+        animate={{
+          opacity: 1,
+          height: "auto",
+        }}
+        exit={{
+          opacity: 0,
+          height: 0,
+        }}
+        transition={{
+          duration: 0.45,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+      >
 
-    <NavLink
-      to="/about"
-      className="mobile-menu-link"
-      onClick={closeMenu}
-    >
-      About
-    </NavLink>
+        <div className="navbar-mobile-inner">
 
-    <NavLink
-      to="/skill"
-      className="mobile-menu-link"
-      onClick={closeMenu}
-    >
-      Skills
-    </NavLink>
+          {/* MOBILE LINKS */}
 
-    <NavLink
-      to="/projects"
-      className="mobile-menu-link"
-      onClick={closeMenu}
-    >
-      Projects
-    </NavLink>
+          {navItems.map((item, index) => (
 
-    <NavLink
-      to="/services"
-      className="mobile-menu-link"
-      onClick={closeMenu}
-    >
-      Services
-    </NavLink>
+            <motion.div
+              key={item.path}
+              initial={{
+                opacity: 0,
+                x: -20,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+              exit={{
+                opacity: 0,
+                x: -15,
+              }}
+              transition={{
+                duration: 0.35,
+                delay: index * 0.055,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
 
-    <NavLink
-      to="/contact"
-      className="mobile-menu-link"
-      onClick={closeMenu}
-    >
-      Contact
-    </NavLink>
+              <NavLink
+                to={item.path}
+                end={item.path === "/"}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  clsx(
+                    "navbar-mobile-link",
+                    isActive && "active"
+                  )
+                }
+              >
 
-    <Link
-      to="/contact"
-      className="mobile-menu-resume"
-      onClick={closeMenu}
-    >
-      Resume
-    </Link>
+                <span className="navbar-mobile-link-name">
+                  {item.name}
+                </span>
 
-  </div>
+                <span className="navbar-mobile-arrow">
+                  <ArrowUpRight
+                    size={17}
+                    strokeWidth={2}
+                  />
+                </span>
+
+              </NavLink>
+
+            </motion.div>
+
+          ))}
+
+
+          {/* MOBILE RESUME */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 15,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: 10,
+            }}
+            transition={{
+              duration: 0.4,
+              delay: 0.34,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
+
+            <Link
+              to="/contact"
+              className="navbar-mobile-resume"
+              onClick={closeMenu}
+            >
+              <span>Resume</span>
+
+              <ArrowUpRight
+                size={18}
+                strokeWidth={2.2}
+              />
+            </Link>
+
+          </motion.div>
+
+        </div>
+
+      </motion.div>
+    )}
+
+  </AnimatePresence>
 
 </nav>
 

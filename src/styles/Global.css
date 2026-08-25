@@ -6,6 +6,7 @@
 @import "./About/About.css";
 @import "./Skills/Skill.css";
 
+
 /* =================================
    GLOBAL RESET
 ================================= */
@@ -16,22 +17,88 @@
   box-sizing: border-box;
 }
 
+
+/* =================================
+   HTML
+================================= */
+
 html {
   scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    var(--color-primary-light)
+    var(--dark-bg-primary);
 }
+
+
+/* =================================
+   BODY
+================================= */
 
 body {
   margin: 0;
+
   min-width: 320px;
   min-height: 100vh;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  background: #ffffff;
-  color: #111827;
+  background:
+    var(--dark-bg-primary);
+
+  color:
+    var(--color-text-primary);
 
   -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
 }
+
+
+/* =================================
+   CUSTOM SCROLLBAR
+================================= */
+
+/* Chrome / Edge / Safari */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    var(--dark-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    var(--color-primary);
+
+  border:
+    2px solid
+    var(--dark-bg-primary);
+
+  border-radius:
+    var(--radius-pill);
+
+  transition:
+    background var(--transition-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    var(--color-primary-light);
+}
+
+
+/* =================================
+   FORM ELEMENTS
+================================= */
 
 button,
 input,
@@ -43,12 +110,76 @@ button {
   cursor: pointer;
 }
 
+
+/* =================================
+   LINKS
+================================= */
+
 a {
-  color: inherit;
-  text-decoration: none;
+  color:
+    inherit;
+
+  text-decoration:
+    none;
 }
 
+
+/* =================================
+   IMAGES
+================================= */
+
 img {
-  max-width: 100%;
-  height: auto;
+  max-width:
+    100%;
+
+  height:
+    auto;
+
+  display:
+    block;
 }
+
+
+/* =================================
+   TEXT SELECTION
+================================= */
+
+::selection {
+  background:
+    rgba(59, 130, 246, 0.35);
+
+  color:
+    var(--color-text-primary);
+}
+
+
+/* =================================
+   FOCUS
+================================= */
+
+:focus-visible {
+  outline:
+    2px solid
+    var(--color-primary-bright);
+
+  outline-offset:
+    3px;
+
+  border-radius:
+    var(--radius-small);
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+}
+

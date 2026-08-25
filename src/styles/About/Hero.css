@@ -488,4 +488,917 @@
     transition: none;
   }
 
+}/* =========================================
+   ABOUT HERO
+========================================= */
+
+.about-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 8% 25%,
+            rgba(59, 130, 246, 0.045),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 70%,
+            rgba(37, 99, 235, 0.035),
+            transparent 32%
+        ),
+        #030509;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   TOP BORDER
+========================================= */
+
+.about-hero::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 82%;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(96, 165, 250, 0.16),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.about-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.018);
+
+    filter: blur(120px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.about-hero-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 88%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.about-hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    max-width: 650px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.about-hero-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0 0 22px;
+
+    color: #60a5fa;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+.about-hero-label span {
+    width: 28px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #60a5fa,
+            transparent
+        );
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.about-hero-content h1 {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            3.5rem,
+            6vw,
+            6.2rem
+        );
+
+    font-weight: 850;
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+.about-hero-content h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff,
+            #bfdbfe 45%,
+            #60a5fa
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.about-hero-description {
+    max-width: 520px;
+
+    margin: 30px 0 0;
+
+    color: #718197;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   META INFORMATION
+========================================= */
+
+.about-hero-meta {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 24px;
+
+    margin-top: 28px;
+}
+
+.about-meta-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #62748a;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+.about-meta-item svg {
+    color: #60a5fa;
+}
+
+.about-meta-dot {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #60a5fa;
+
+    box-shadow:
+        0 0 12px
+        rgba(96, 165, 250, 0.5);
+}
+
+
+/* =========================================
+   EXPLORE
+========================================= */
+
+.about-explore {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 40px;
+
+    color: #718197;
+
+    font-size: 10px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.about-explore-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #93c5fd;
+
+    background:
+        rgba(59, 130, 246, 0.04);
+
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.12);
+
+    border-radius: 50%;
+
+    transition:
+        transform 0.4s ease,
+        background 0.3s ease;
+}
+
+.about-explore:hover .about-explore-icon {
+    transform:
+        translate(3px, 3px);
+
+    background:
+        rgba(59, 130, 246, 0.09);
+}
+
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.about-hero-image {
+    position: relative;
+
+    min-height: 570px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   IMAGE GLOW
+========================================= */
+
+.about-image-glow {
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.10),
+            rgba(37, 99, 235, 0.025) 48%,
+            transparent 72%
+        );
+
+    filter: blur(25px);
+
+    animation:
+        aboutGlow 7s ease-in-out infinite;
+}
+
+@keyframes aboutGlow {
+
+    0%,
+    100% {
+        transform: scale(0.96);
+
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: scale(1.05);
+
+        opacity: 0.9;
+    }
+}
+
+
+/* =========================================
+   IMAGE FRAME
+========================================= */
+
+.about-image-frame {
+    position: relative;
+
+    width: min(430px, 100%);
+
+    height: 540px;
+
+    overflow: hidden;
+
+    background: #070b11;
+
+    border:
+        1px solid
+        rgba(147, 197, 253, 0.12);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 35px 90px
+        rgba(0, 0, 0, 0.58),
+
+        0 0 45px
+        rgba(37, 99, 235, 0.035),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.about-image-frame img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter:
+        saturate(0.88)
+        contrast(1.05)
+        brightness(0.84);
+
+    transform: scale(1.015);
+
+    transition:
+        transform 0.8s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+
+        filter 0.6s ease;
+}
+
+
+/* =========================================
+   IMAGE HOVER
+========================================= */
+
+.about-image-frame:hover img {
+    transform: scale(1.045);
+
+    filter:
+        saturate(0.98)
+        contrast(1.05)
+        brightness(0.91);
+}
+
+
+/* =========================================
+   DARK IMAGE OVERLAY
+========================================= */
+
+.about-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 6, 12, 0.08) 0%,
+            transparent 35%,
+            rgba(2, 6, 12, 0.14) 58%,
+            rgba(2, 6, 12, 0.82) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   BLUE IMAGE TINT
+========================================= */
+
+.about-image-frame::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.09),
+            transparent 40%,
+            transparent 70%,
+            rgba(59, 130, 246, 0.055)
+        );
+
+    mix-blend-mode: screen;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE LABEL
+========================================= */
+
+.about-image-label {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 11px;
+
+    color: #c2d3e5;
+
+    background:
+        rgba(3, 8, 15, 0.60);
+
+    border:
+        1px solid
+        rgba(147, 197, 253, 0.10);
+
+    border-radius: 8px;
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.about-image-label span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #60a5fa;
+
+    box-shadow:
+        0 0 10px
+        rgba(96, 165, 250, 0.7);
+}
+
+
+/* =========================================
+   EXPERIENCE BADGE
+========================================= */
+
+.about-stat {
+    position: absolute;
+
+    z-index: 6;
+
+    left: -45px;
+    bottom: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 170px;
+
+    padding: 18px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 15, 25, 0.96),
+            rgba(2, 6, 12, 0.99)
+        );
+
+    border:
+        1px solid
+        rgba(96, 165, 250, 0.14);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 45px
+        rgba(0, 0, 0, 0.50),
+
+        inset 0 1px 0
+        rgba(147, 197, 253, 0.035);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================
+   STAT NUMBER
+========================================= */
+
+.about-stat strong {
+    color: #f8fafc;
+
+    font-size: 31px;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: -1.5px;
+}
+
+.about-stat strong::after {
+    content: "";
+
+    display: inline-block;
+
+    width: 5px;
+    height: 5px;
+
+    margin-left: 4px;
+    margin-bottom: 6px;
+
+    border-radius: 50%;
+
+    background: #60a5fa;
+
+    box-shadow:
+        0 0 12px
+        rgba(96, 165, 250, 0.5);
+}
+
+
+/* =========================================
+   STAT TEXT
+========================================= */
+
+.about-stat span {
+    color: #718298;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    letter-spacing: 1.1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   CORNER DECORATION
+========================================= */
+
+.about-image-corner {
+    position: absolute;
+
+    right: 15px;
+    bottom: 15px;
+
+    width: 75px;
+    height: 75px;
+
+    border-right:
+        1px solid
+        rgba(96, 165, 250, 0.24);
+
+    border-bottom:
+        1px solid
+        rgba(96, 165, 250, 0.24);
+
+    border-radius: 0 0 15px 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .about-hero {
+        padding: 100px 0;
+    }
+
+    .about-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+    .about-hero-content {
+        max-width: 700px;
+    }
+
+    .about-hero-image {
+        min-height: 560px;
+    }
+
+    .about-image-frame {
+        width: 400px;
+        height: 520px;
+    }
+
+    .about-stat {
+        left: calc(50% - 260px);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .about-hero {
+        min-height: auto;
+
+        padding: 80px 0 100px;
+    }
+
+    .about-hero-container {
+        width: 92%;
+
+        gap: 55px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 3.25rem;
+
+        letter-spacing: -2.5px;
+    }
+
+    .about-hero-description {
+        margin-top: 24px;
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+    .about-hero-meta {
+        gap: 15px;
+
+        margin-top: 24px;
+    }
+
+    .about-meta-item {
+        font-size: 10px;
+    }
+
+    .about-explore {
+        margin-top: 32px;
+    }
+
+    .about-hero-image {
+        min-height: 500px;
+    }
+
+    .about-image-frame {
+        width: 82vw;
+
+        max-width: 390px;
+
+        height: 490px;
+
+        border-radius: 21px;
+    }
+
+    .about-image-glow {
+        width: 350px;
+        height: 350px;
+    }
+
+    .about-stat {
+        left: 5px;
+
+        bottom: 30px;
+
+        min-width: 155px;
+
+        padding: 15px 17px;
+
+        border-radius: 14px;
+    }
+
+    .about-stat strong {
+        font-size: 27px;
+    }
+
+    .about-stat span {
+        font-size: 8px;
+    }
+
+    .about-image-label {
+        top: 18px;
+        left: 18px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 420px) {
+
+    .about-hero-content h1 {
+        font-size: 2.75rem;
+
+        letter-spacing: -2px;
+    }
+
+    .about-hero-label {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .about-hero-description {
+        font-size: 12px;
+    }
+
+    .about-hero-image {
+        min-height: 440px;
+    }
+
+    .about-image-frame {
+        height: 430px;
+
+        border-radius: 18px;
+    }
+
+    .about-stat {
+        left: 0;
+
+        bottom: 22px;
+
+        min-width: 145px;
+
+        padding: 13px 15px;
+    }
+
+    .about-stat strong {
+        font-size: 24px;
+    }
+
+    .about-stat span {
+        font-size: 7px;
+    }
+
+    .about-image-label {
+        font-size: 7px;
+
+        padding: 7px 9px;
+    }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-image-glow {
+        animation: none;
+    }
+
+    .about-image-frame img,
+    .about-explore-icon {
+        transition: none;
+    }
 }
