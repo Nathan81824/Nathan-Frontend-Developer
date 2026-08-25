@@ -11,24 +11,10 @@ function Home() {
   return (
     <main>
 
-      {/* =================================
-          HERO SECTION
-      ================================= */}
-
       <Hero />
-
-
-      {/* =================================
-          SERVICES SECTION
-      ================================= */}
-
       <Services />
-
-
-      <Skills/>
-
-      <Journey/>
-
+      <Skills />
+      <Journey />
     </main>
   );
 }

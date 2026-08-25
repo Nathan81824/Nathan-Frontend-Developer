@@ -1,8 +1,9 @@
 {
-  "name": "portfolio-app",
+  "name": "Nathan-Frontend-Developer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://YOUR-GITHUB-USERNAME.github.io/Nathan-Frontend-Developer",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,7 +18,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^13.1.1",
     "gsap": "^3.15.0",
-    "icons": "^1.0.0",
     "lenis": "^1.3.26",
     "lucide-react": "^1.34.0",
     "react": "^19.2.8",
