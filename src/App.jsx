@@ -6,9 +6,10 @@ import Footer from "./Components/Shared/Footer";
 import Home from "./Components/Pages/Home";
 import About from "./Components/Pages/About";
 import Projects from "./Components/Pages/Projects";
-import Contact from "./Components/Pages/Contact";
-import WhatsAppButton from "./Components/WhatsApp/WhatsAppButton";
 import Skills from "./Components/Pages/Skills";
+import Contact from "./Components/Pages/Contact";
+
+import WhatsAppButton from "./Components/WhatsApp/WhatsAppButton";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-      <WhatsAppButton/>
+      <WhatsAppButton />
+
       <Footer />
     </>
   );

@@ -1,13 +1,25 @@
-/* =========================================
+/* =========================================================
    HERO SECTION
-========================================= */
+   Base / Desktop Styles
+========================================================= */
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
+  position: relative;
+
   min-height: 95vh;
+
   padding: 110px 0 80px;
 
   display: flex;
+
   align-items: center;
+
+  overflow: hidden;
 
   background:
     radial-gradient(
@@ -19,22 +31,20 @@
       circle at 90% 80%,
       rgba(37, 99, 235, 0.10),
       transparent 30%
-    ),
-    #05070b;
+    );
 
   color: var(--color-text-primary);
-
-  overflow: hidden;
 }
 
 
-/* =========================================
-   CONTAINER
-========================================= */
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
 
 .hero-container {
-  width: 90%;
-  max-width: 1250px;
+  width: var(--container-width);
+
+  max-width: var(--container-max-width);
 
   margin: 0 auto;
 
@@ -48,59 +58,56 @@
 }
 
 
-/* =========================================
-   LEFT CONTENT
-========================================= */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-content {
-  max-width: 680px;
+  width: 100%;
 
-  animation:
-    heroLeft
-    0.9s
-    ease
-    both;
+  max-width: var(--hero-max-width);
 }
 
 
-/* =========================================
+/* =========================================================
    GREETING
-========================================= */
+========================================================= */
 
 .hero-greeting {
   margin: 0 0 22px;
 
   color: var(--hero-greeting);
 
+  font-family: var(--font-primary);
+
   font-size: 15px;
 
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 
-  letter-spacing: 1.5px;
+  line-height: var(--line-height-normal);
+
+  letter-spacing: var(--letter-wider);
 }
 
 
-/* =========================================
-   TITLE
-========================================= */
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
 .hero-title {
   margin: 0 0 35px;
 
   color: var(--hero-heading);
 
-  font-size:
-    clamp(
-      4rem,
-      7vw,
-      6.8rem
-    );
+  font-family: var(--font-heading);
 
-  font-weight: 800;
+  font-size: var(--hero-title-size);
 
-  line-height: 0.9;
+  font-weight: var(--hero-title-weight);
 
-  letter-spacing: -5px;
+  line-height: var(--hero-title-line-height);
+
+  letter-spacing: var(--hero-title-spacing);
 }
 
 .hero-title span {
@@ -110,12 +117,16 @@
 }
 
 
-/* =========================================
-   CHANGING SKILL CARD
-========================================= */
+/* =========================================================
+   SKILL CARD
+========================================================= */
 
 .hero-skill {
+  width: 100%;
+
   max-width: 650px;
+
+  min-height: 100px;
 
   display: flex;
 
@@ -127,132 +138,147 @@
 
   padding: 20px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.035
-    );
+  background: var(--glass-bg);
 
-  border:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.10
-    );
+  border: 1px solid var(--glass-border);
 
   border-radius: var(--radius-large);
 
-  backdrop-filter:
-    blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 
-  -webkit-backdrop-filter:
-    blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 
-  box-shadow:
-    var(--shadow-medium);
-
-  animation:
-    skillChange
-    0.5s
-    ease
-    both;
+  box-shadow: var(--shadow-md);
 }
 
 
-/* =========================================
+/* =========================================================
    SKILL ICON
-========================================= */
+========================================================= */
 
 .hero-skill-icon {
-  width: 55px;
-  height: 55px;
+  width: var(--icon-size);
 
-  min-width: 55px;
+  height: var(--icon-size);
+
+  min-width: var(--icon-size);
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  flex-shrink: 0;
 
   color: var(--icon-primary);
 
-  background:
-    var(--icon-bg);
+  background: var(--icon-bg);
 
-  border:
-    1px solid
-    var(--icon-border);
+  border: 1px solid var(--icon-border);
 
-  border-radius:
-    var(--radius-medium);
+  border-radius: var(--radius-medium);
 
   box-shadow:
-    0 0 25px
-    var(--icon-glow);
+    0 0 25px var(--icon-glow);
 }
+
+
+/* =========================================================
+   SIMPLE ICONS
+========================================================= */
 
 .hero-skill-icon svg {
   width: 28px;
+
   height: 28px;
 
   display: block;
+}
 
+
+/* Simple Icons use path fill */
+
+.hero-skill-icon svg path {
   fill: currentColor;
 }
 
 
-/* =========================================
+/* =========================================================
    SKILL CONTENT
-========================================= */
+========================================================= */
 
 .hero-skill-content {
   min-width: 0;
+
+  flex: 1;
 }
+
+
+/* =========================================================
+   SKILL LABEL
+========================================================= */
 
 .hero-skill-label {
   margin: 0 0 5px;
 
   color: var(--color-text-muted);
 
-  font-size: 11px;
+  font-family: var(--font-primary);
 
-  font-weight: 700;
+  font-size: var(--font-size-xs);
+
+  font-weight: var(--font-weight-bold);
+
+  line-height: var(--line-height-normal);
 
   text-transform: uppercase;
 
-  letter-spacing: 1.5px;
+  letter-spacing: var(--letter-wider);
 }
+
+
+/* =========================================================
+   SKILL TITLE
+========================================================= */
 
 .hero-skill-content h2 {
   margin: 0 0 7px;
 
   color: var(--color-text-heading);
 
-  font-size: 21px;
+  font-family: var(--font-heading);
 
-  font-weight: 750;
+  font-size: var(--font-size-xl);
+
+  font-weight: var(--font-weight-bold);
 
   line-height: 1.2;
 }
+
+
+/* =========================================================
+   SKILL DESCRIPTION
+========================================================= */
 
 .hero-description {
   margin: 0;
 
   color: var(--hero-description);
 
-  font-size: 14px;
+  font-family: var(--font-primary);
 
-  line-height: 1.7;
+  font-size: var(--font-size-md);
+
+  font-weight: var(--font-weight-regular);
+
+  line-height: var(--line-height-relaxed);
 }
 
 
-/* =========================================
-   BUTTONS
-========================================= */
+/* =========================================================
+   BUTTONS CONTAINER
+========================================================= */
 
 .hero-buttons {
   display: flex;
@@ -265,268 +291,196 @@
 }
 
 
-/* =========================================
+/* =========================================================
    PRIMARY BUTTON
-   SOLID BLUE
-========================================= */
+========================================================= */
 
 .hero-primary-btn {
+  min-height: var(--button-height);
+
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 9px;
 
-  padding: 14px 22px;
+  padding:
+    14px
+    var(--button-padding-x);
 
-  background:
-    var(--button-primary-bg);
+  background: var(--button-primary-bg);
 
-  color:
-    var(--button-primary-text);
+  color: var(--button-primary-text);
 
   border:
     1px solid
     var(--button-primary-border);
 
-  border-radius:
-    var(--radius-small);
+  border-radius: var(--button-radius);
 
-  font-size: 14px;
+  font-family: var(--font-primary);
 
-  font-weight: 800;
+  font-size: var(--font-size-md);
+
+  font-weight: var(--font-weight-extrabold);
+
+  line-height: 1;
 
   text-decoration: none;
 
-  box-shadow:
-    var(--button-primary-shadow);
+  box-shadow: var(--button-primary-shadow);
 
-  transition:
-    transform var(--transition-normal),
-    background var(--transition-normal),
-    border-color var(--transition-normal),
-    box-shadow var(--transition-normal);
-}
-
-.hero-primary-btn:hover {
-  transform:
-    translateY(-4px);
-
-  background:
-    var(--button-primary-hover);
-
-  border-color:
-    var(--button-primary-hover-border);
-
-  box-shadow:
-    var(--button-primary-hover-shadow);
+  cursor: pointer;
 }
 
 
-/* =========================================
+/* =========================================================
+   PRIMARY BUTTON ICON
+========================================================= */
+
+.hero-primary-btn svg {
+  width: 18px;
+
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
    SECONDARY BUTTON
-   DARK BLUE GLASS
-========================================= */
+========================================================= */
 
 .hero-secondary-btn {
+  min-height: var(--button-height);
+
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
-  padding: 13px 22px;
+  padding:
+    13px
+    var(--button-padding-x);
 
-  background:
-    var(--button-secondary-bg);
+  background: var(--button-secondary-bg);
 
-  color:
-    var(--button-secondary-text);
+  color: var(--button-secondary-text);
 
   border:
     1px solid
     var(--button-secondary-border);
 
-  border-radius:
-    var(--radius-small);
+  border-radius: var(--button-radius);
 
-  font-size: 14px;
+  font-family: var(--font-primary);
 
-  font-weight: 700;
+  font-size: var(--font-size-md);
+
+  font-weight: var(--font-weight-bold);
+
+  line-height: 1;
 
   text-decoration: none;
 
-  backdrop-filter:
-    blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
 
-  -webkit-backdrop-filter:
-    blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 
-  box-shadow:
-    var(--button-secondary-shadow);
+  box-shadow: var(--button-secondary-shadow);
 
-  transition:
-    transform var(--transition-normal),
-    background var(--transition-normal),
-    border-color var(--transition-normal),
-    box-shadow var(--transition-normal);
-}
-
-.hero-secondary-btn:hover {
-  transform:
-    translateY(-4px);
-
-  background:
-    var(--button-secondary-hover);
-
-  border-color:
-    var(--button-secondary-hover-border);
-
-  box-shadow:
-    var(--shadow-blue);
+  cursor: pointer;
 }
 
 
-/* =========================================
+/* =========================================================
    SOCIAL LINKS
-========================================= */
+========================================================= */
 
 .hero-socials {
   display: flex;
-
   align-items: center;
-
   gap: 25px;
 }
 
 .hero-socials a {
-  color:
-    var(--hero-social);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 
-  font-size: 14px;
+  color: var(--hero-social);
 
-  font-weight: 600;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+
+  line-height: var(--line-height-normal);
 
   text-decoration: none;
-
-  transition:
-    color var(--transition-fast),
-    transform var(--transition-fast);
 }
 
-.hero-socials a:hover {
-  color:
-    var(--hero-social-hover);
-
-  transform:
-    translateX(4px);
-}
-
-
-/* =========================================
-   RIGHT SIDE
-========================================= */
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
 .hero-visual {
+  width: 100%;
+
   display: flex;
 
   align-items: center;
 
   justify-content: center;
-
-  animation:
-    heroRight
-    1s
-    ease
-    0.15s
-    both;
 }
 
 
-/* =========================================
+/* =========================================================
    CODE CARD
-========================================= */
+========================================================= */
 
 .hero-card {
+  position: relative;
+
   width: 100%;
 
-  max-width: 500px;
+  max-width: var(--hero-card-max-width);
 
   overflow: hidden;
 
-  position: relative;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.07),
-      rgba(255, 255, 255, 0.025)
-    );
+  background: var(--card-background);
 
   border:
     1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.10
-    );
+    var(--card-border);
 
-  border-radius:
-    var(--radius-xl);
+  border-radius: var(--radius-xl);
 
   box-shadow:
-    var(--shadow-large),
-
+    var(--card-shadow),
     0 0 50px
-    rgba(
-      37,
-      99,
-      235,
-      0.06
-    );
+    rgba(37, 99, 235, 0.06);
 
   backdrop-filter:
-    blur(20px);
+    blur(var(--hero-card-blur));
 
   -webkit-backdrop-filter:
-    blur(20px);
+    blur(var(--hero-card-blur));
 
-  transform:
-    rotate(1deg);
-
-  transition:
-    transform var(--transition-normal),
-    box-shadow var(--transition-normal);
-}
-
-.hero-card:hover {
-  transform:
-    rotate(0deg)
-    translateY(-8px);
-
-  box-shadow:
-    0 40px 90px
-    rgba(0, 0, 0, 0.60),
-
-    0 0 60px
-    rgba(
-      37,
-      99,
-      235,
-      0.10
-    );
+  transform: rotate(1deg);
 }
 
 
-/* =========================================
+/* =========================================================
    CODE HEADER
-========================================= */
+========================================================= */
 
 .code-header {
-  height: 48px;
-
   position: relative;
+
+  height: 48px;
 
   display: flex;
 
@@ -537,59 +491,61 @@
   padding: 0 18px;
 
   background:
-    rgba(
-      255,
-      255,
-      255,
-      0.035
-    );
+    rgba(255, 255, 255, 0.035);
 
   border-bottom:
     1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.07
-    );
+    rgba(255, 255, 255, 0.07);
 }
 
 
-/* =========================================
+/* =========================================================
    CODE HEADER DOTS
-========================================= */
+========================================================= */
 
 .code-header > span {
-  width: 11px;
-  height: 11px;
-
-  display: block;
-
   position: relative;
 
   z-index: 2;
 
-  pointer-events: none;
+  width: 11px;
+
+  height: 11px;
+
+  display: block;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
+
+  pointer-events: none;
 }
+
+
+/* Red */
 
 .code-header > span:nth-child(1) {
   background: #ff5f57;
 }
 
+
+/* Yellow */
+
 .code-header > span:nth-child(2) {
   background: #ffbd2e;
 }
+
+
+/* Green */
 
 .code-header > span:nth-child(3) {
   background: #28c840;
 }
 
 
-/* =========================================
-   INVISIBLE SOUND BUTTON
-========================================= */
+/* =========================================================
+   CODE SOUND BUTTON
+========================================================= */
 
 .code-sound-button {
   position: absolute;
@@ -597,9 +553,11 @@
   inset: 0;
 
   width: 100%;
+
   height: 100%;
 
   padding: 0;
+
   margin: 0;
 
   border: none;
@@ -614,48 +572,41 @@
 }
 
 
-/* =========================================
+/* =========================================================
    CODE CONTENT
-========================================= */
+========================================================= */
 
 .code-content {
-  padding: 30px;
-
   min-height: 360px;
 
-  font-family:
-    "Fira Code",
-    "Cascadia Code",
-    Consolas,
-    monospace;
+  padding: 30px;
 
-  font-size: 14px;
+  overflow-x: auto;
+
+  font-family: var(--font-code);
+
+  font-size: var(--font-size-md);
 
   line-height: 1.9;
 
-  color:
-    var(--code-text);
-
-  overflow-x: auto;
+  color: var(--code-text);
 }
 
 
-/* =========================================
+/* =========================================================
    TYPING CODE
-========================================= */
+========================================================= */
 
 .typing-code {
   margin: 0;
 
   padding: 0;
 
-  font-family:
-    "Fira Code",
-    "Cascadia Code",
-    Consolas,
-    monospace;
+  font-family: var(--font-code);
 
-  font-size: 14px;
+  font-size: var(--font-size-md);
+
+  font-weight: var(--font-weight-regular);
 
   line-height: 1.9;
 
@@ -663,423 +614,114 @@
 
   word-break: normal;
 
-  color:
-    var(--code-text);
+  color: var(--code-text);
 }
 
 
-/* =========================================
-   CODE COLORS
-========================================= */
+/* =========================================================
+   CODE KEYWORD
+========================================================= */
 
 .code-keyword {
-  color:
-    var(--code-keyword);
+  color: var(--code-keyword);
 
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
+
+
+/* =========================================================
+   CODE STRING
+========================================================= */
 
 .code-string {
-  color:
-    var(--code-string);
+  color: var(--code-string);
 }
+
+
+/* =========================================================
+   CODE PROPERTY
+========================================================= */
 
 .code-property {
-  color:
-    var(--code-property);
+  color: var(--code-property);
 }
+
+
+/* =========================================================
+   CODE NUMBER
+========================================================= */
 
 .code-number {
-  color:
-    var(--code-number);
+  color: var(--code-number);
 }
+
+
+/* =========================================================
+   CODE COMMENT
+========================================================= */
 
 .code-comment {
-  color:
-    var(--code-comment);
+  color: var(--code-comment);
 }
+
+
+/* =========================================================
+   CODE FUNCTION
+========================================================= */
 
 .code-function {
-  color:
-    var(--code-function);
+  color: var(--code-function);
 }
 
 
-/* =========================================
+/* =========================================================
+   CODE PUNCTUATION
+========================================================= */
+
+.code-punctuation {
+  color: var(--code-punctuation);
+}
+
+
+/* =========================================================
    TYPING CURSOR
-========================================= */
+========================================================= */
 
 .code-typing-cursor {
   display: inline-block;
 
   margin-left: 2px;
 
-  color:
-    var(--code-cursor);
+  color: var(--code-cursor);
 
-  font-weight: 400;
-
-  animation:
-    cursorBlink
-    0.8s
-    steps(1)
-    infinite;
+  font-weight: var(--font-weight-regular);
 }
 
 
-/* =========================================
-   ANIMATIONS
-========================================= */
+/* =========================================================
+   BUTTON FOCUS
+========================================================= */
 
-@keyframes heroLeft {
+.hero-primary-btn:focus-visible,
+.hero-secondary-btn:focus-visible {
+  outline:
+    2px solid
+    var(--color-primary-soft);
 
-  from {
-    opacity: 0;
-
-    transform:
-      translateX(-40px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateX(0);
-  }
-
+  outline-offset: 4px;
 }
 
 
-@keyframes heroRight {
+/* =========================================================
+   SOCIAL FOCUS
+========================================================= */
 
-  from {
-    opacity: 0;
+.hero-socials a:focus-visible {
+  outline:
+    2px solid
+    var(--color-primary-soft);
 
-    transform:
-      translateX(40px)
-      scale(0.96);
-  }
+  outline-offset: 4px;
 
-  to {
-    opacity: 1;
-
-    transform:
-      translateX(0)
-      scale(1);
-  }
-
+  border-radius: var(--radius-xs);
 }
-
-
-@keyframes skillChange {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
-}
-
-
-@keyframes cursorBlink {
-
-  0%,
-  45% {
-    opacity: 1;
-  }
-
-  46%,
-  100% {
-    opacity: 0;
-  }
-
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 950px) {
-
-  .hero {
-    padding:
-      90px 0;
-  }
-
-  .hero-container {
-    grid-template-columns:
-      1fr;
-
-    gap:
-      70px;
-  }
-
-  .hero-content {
-    max-width:
-      800px;
-
-    margin:
-      0 auto;
-
-    text-align:
-      center;
-  }
-
-  .hero-skill {
-    margin-left:
-      auto;
-
-    margin-right:
-      auto;
-
-    text-align:
-      left;
-  }
-
-  .hero-buttons {
-    justify-content:
-      center;
-  }
-
-  .hero-socials {
-    justify-content:
-      center;
-  }
-
-  .hero-visual {
-    width:
-      100%;
-  }
-
-  .hero-card {
-    margin:
-      0 auto;
-  }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-  .hero {
-    min-height:
-      auto;
-
-    padding:
-      70px 0;
-  }
-
-  .hero-container {
-    width:
-      90%;
-
-    gap:
-      55px;
-  }
-
-  .hero-title {
-    font-size:
-      3.7rem;
-
-    letter-spacing:
-      -3px;
-  }
-
-  .hero-greeting {
-    font-size:
-      13px;
-  }
-
-  .hero-skill {
-    padding:
-      16px;
-
-    gap:
-      13px;
-  }
-
-  .hero-skill-icon {
-    width:
-      45px;
-
-    height:
-      45px;
-
-    min-width:
-      45px;
-  }
-
-  .hero-skill-content h2 {
-    font-size:
-      18px;
-  }
-
-  .hero-description {
-    font-size:
-      13px;
-  }
-
-  .hero-buttons {
-    flex-direction:
-      column;
-
-    width:
-      100%;
-  }
-
-  .hero-primary-btn,
-  .hero-secondary-btn {
-    width:
-      100%;
-  }
-
-  .hero-socials {
-    justify-content:
-      center;
-
-    gap:
-      18px;
-  }
-
-  .hero-card {
-    transform:
-      none;
-
-    border-radius:
-      14px;
-  }
-
-  .hero-card:hover {
-    transform:
-      translateY(-5px);
-  }
-
-  .code-header {
-    height:
-      44px;
-
-    padding:
-      0 14px;
-  }
-
-  .code-header > span {
-    width:
-      9px;
-
-    height:
-      9px;
-  }
-
-  .code-content {
-    min-height:
-      300px;
-
-    padding:
-      22px;
-
-    font-size:
-      11px;
-
-    line-height:
-      1.8;
-
-    overflow-x:
-      auto;
-  }
-
-  .typing-code {
-    font-size:
-      11px;
-
-    line-height:
-      1.8;
-  }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 400px) {
-
-  .hero-title {
-    font-size:
-      3.2rem;
-
-    letter-spacing:
-      -2.5px;
-  }
-
-  .hero-skill-content h2 {
-    font-size:
-      16px;
-  }
-
-  .hero-description {
-    font-size:
-      12px;
-  }
-
-  .code-content {
-    padding:
-      18px;
-
-    font-size:
-      10px;
-  }
-
-  .typing-code {
-    font-size:
-      10px;
-  }
-
-}
-
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .hero-content,
-  .hero-visual,
-  .hero-skill {
-    animation:
-      none;
-  }
-
-  .hero-card,
-  .hero-primary-btn,
-  .hero-secondary-btn,
-  .hero-socials a {
-    transition:
-      none;
-  }
-
-  .code-typing-cursor {
-    animation:
-      none;
-
-    opacity:
-      1;
-  }
-
-}
-

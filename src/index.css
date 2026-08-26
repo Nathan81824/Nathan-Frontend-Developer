@@ -1,5 +1,13 @@
+/* =========================================================
+   INDEX.CSS
+========================================================= */
+
 @import "./styles/Core/Variables.css";
 
+@import "./styles/Core/Theme.css";
+
 @import "./styles/Global.css";
+
+@import "./styles/Core/Animation.css";
 
 @import "./styles/Core/Responsive/Responsive.css";

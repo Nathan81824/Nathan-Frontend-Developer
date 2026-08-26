@@ -1,291 +1,252 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ArrowUpRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import clsx from "clsx";
+import { NavLink } from "react-router-dom";
 
-function Navbar() {
-const [menuOpen, setMenuOpen] = useState(false);
+import {
+  Menu,
+  X,
+  Sun,
+  Moon,
+  ArrowUpRight,
+} from "lucide-react";
 
-const navItems = [
-{ name: "Home", path: "/" },
-{ name: "About", path: "/about" },
-{ name: "Skills", path: "/skill" },
-{ name: "Projects", path: "/projects" },
-{ name: "Services", path: "/services" },
-{ name: "Contact", path: "/contact" },
+import { useTheme } from "../../context/ThemeContext";
+
+
+const navLinks = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Skills",
+    path: "/skills",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
 ];
 
-const closeMenu = () => {
-setMenuOpen(false);
-};
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-return (
-<nav className="navbar">
+  const { theme, toggleTheme } = useTheme();
 
-  <div className="navbar-container">
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
-    {/* LOGO */}
+  const handleThemeToggle = () => {
+    toggleTheme();
+  };
 
-    <Link
-      to="/"
-      className="navbar-logo"
-      onClick={closeMenu}
-    >
-      Nathan
-    </Link>
+  return (
+    <header className={`navbar ${theme === "light" ? "navbar-light" : ""}`}>
+      
+      <div className="navbar-container">
 
+        {/* ================================
+            LOGO
+        ================================= */}
 
-    {/* DESKTOP NAVIGATION */}
-
-    <div className="navbar-links">
-
-      {navItems.map((item) => (
         <NavLink
-          key={item.path}
-          to={item.path}
-          end={item.path === "/"}
-          className={({ isActive }) =>
-            clsx(
-              "navbar-link",
-              isActive && "active"
-            )
-          }
+          to="/"
+          className="navbar-logo"
+          onClick={closeMenu}
         >
-          {item.name}
+          Nathan
         </NavLink>
-      ))}
-
-    </div>
 
 
-    {/* DESKTOP RESUME */}
+        {/* ================================
+            DESKTOP NAVIGATION
+        ================================= */}
 
-    <Link
-      to="/contact"
-      className="navbar-resume"
-    >
-      <span>Resume</span>
+        <nav className="navbar-links">
 
-      <ArrowUpRight
-        size={17}
-        strokeWidth={2.2}
-      />
-    </Link>
-
-
-    {/* MOBILE MENU BUTTON */}
-
-    <motion.button
-      type="button"
-      className={clsx(
-        "navbar-menu-button",
-        menuOpen && "menu-open"
-      )}
-      onClick={() => setMenuOpen((prev) => !prev)}
-      whileTap={{ scale: 0.92 }}
-      aria-label={
-        menuOpen
-          ? "Close navigation menu"
-          : "Open navigation menu"
-      }
-      aria-expanded={menuOpen}
-    >
-
-      <AnimatePresence mode="wait" initial={false}>
-
-        {menuOpen ? (
-          <motion.span
-            key="close"
-            initial={{
-              opacity: 0,
-              rotate: -90,
-              scale: 0.7,
-            }}
-            animate={{
-              opacity: 1,
-              rotate: 0,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              rotate: 90,
-              scale: 0.7,
-            }}
-            transition={{
-              duration: 0.22,
-            }}
-          >
-            <X
-              size={24}
-              strokeWidth={2}
-            />
-          </motion.span>
-        ) : (
-          <motion.span
-            key="menu"
-            initial={{
-              opacity: 0,
-              rotate: 90,
-              scale: 0.7,
-            }}
-            animate={{
-              opacity: 1,
-              rotate: 0,
-              scale: 1,
-            }}
-            exit={{
-              opacity: 0,
-              rotate: -90,
-              scale: 0.7,
-            }}
-            transition={{
-              duration: 0.22,
-            }}
-          >
-            <Menu
-              size={24}
-              strokeWidth={2}
-            />
-          </motion.span>
-        )}
-
-      </AnimatePresence>
-
-    </motion.button>
-
-  </div>
-
-
-  {/* MOBILE MENU */}
-
-  <AnimatePresence>
-
-    {menuOpen && (
-      <motion.div
-        className="navbar-mobile-menu"
-        initial={{
-          opacity: 0,
-          height: 0,
-        }}
-        animate={{
-          opacity: 1,
-          height: "auto",
-        }}
-        exit={{
-          opacity: 0,
-          height: 0,
-        }}
-        transition={{
-          duration: 0.45,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-      >
-
-        <div className="navbar-mobile-inner">
-
-          {/* MOBILE LINKS */}
-
-          {navItems.map((item, index) => (
-
-            <motion.div
-              key={item.path}
-              initial={{
-                opacity: 0,
-                x: -20,
-              }}
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-              exit={{
-                opacity: 0,
-                x: -15,
-              }}
-              transition={{
-                duration: 0.35,
-                delay: index * 0.055,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-
-              <NavLink
-                to={item.path}
-                end={item.path === "/"}
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  clsx(
-                    "navbar-mobile-link",
-                    isActive && "active"
-                  )
-                }
-              >
-
-                <span className="navbar-mobile-link-name">
-                  {item.name}
-                </span>
-
-                <span className="navbar-mobile-arrow">
-                  <ArrowUpRight
-                    size={17}
-                    strokeWidth={2}
-                  />
-                </span>
-
-              </NavLink>
-
-            </motion.div>
-
-          ))}
-
-
-          {/* MOBILE RESUME */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: 10,
-            }}
-            transition={{
-              duration: 0.4,
-              delay: 0.34,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-          >
-
-            <Link
-              to="/contact"
-              className="navbar-mobile-resume"
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.name}
+              to={link.path}
+              className={({ isActive }) =>
+                `navbar-link ${isActive ? "active" : ""}`
+              }
               onClick={closeMenu}
             >
-              <span>Resume</span>
+              {link.name}
+            </NavLink>
+          ))}
 
-              <ArrowUpRight
-                size={18}
-                strokeWidth={2.2}
-              />
-            </Link>
+        </nav>
 
-          </motion.div>
+
+        {/* ================================
+            DESKTOP ACTIONS
+        ================================= */}
+
+        <div className="navbar-actions">
+
+          {/* THEME BUTTON */}
+
+          <button
+            type="button"
+            className="navbar-theme-button"
+            onClick={handleThemeToggle}
+            aria-label={
+              theme === "dark"
+                ? "Switch to light mode"
+                : "Switch to dark mode"
+            }
+            title={
+              theme === "dark"
+                ? "Light mode"
+                : "Dark mode"
+            }
+          >
+            {theme === "dark" ? (
+              <Sun size={18} strokeWidth={2} />
+            ) : (
+              <Moon size={18} strokeWidth={2} />
+            )}
+          </button>
+
+
+          {/* RESUME */}
+
+          <a
+            href="/Nathan-Frontend-Developer/resume.pdf"
+            className="navbar-resume"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
 
         </div>
 
-      </motion.div>
-    )}
 
-  </AnimatePresence>
+        {/* ================================
+            MOBILE MENU BUTTON
+        ================================= */}
 
-</nav>
+        <div className="navbar-mobile-actions">
 
-);
+          {/* MOBILE THEME BUTTON */}
+
+          <button
+            type="button"
+            className="navbar-theme-button mobile-theme-button"
+            onClick={handleThemeToggle}
+            aria-label={
+              theme === "dark"
+                ? "Switch to light mode"
+                : "Switch to dark mode"
+            }
+          >
+            {theme === "dark" ? (
+              <Sun size={18} strokeWidth={2} />
+            ) : (
+              <Moon size={18} strokeWidth={2} />
+            )}
+          </button>
+
+
+          {/* MENU */}
+
+          <button
+            type="button"
+            className={`navbar-menu-button ${
+              menuOpen ? "open" : ""
+            }`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={
+              menuOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+            }
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              <X size={23} strokeWidth={2} />
+            ) : (
+              <Menu size={23} strokeWidth={2} />
+            )}
+          </button>
+
+        </div>
+
+      </div>
+
+
+      {/* ================================
+          MOBILE MENU
+      ================================= */}
+
+      {menuOpen && (
+        <div
+          className={`navbar-mobile-menu ${
+            theme === "light"
+              ? "navbar-mobile-menu-light"
+              : ""
+          }`}
+        >
+
+          <div className="navbar-mobile-inner">
+
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={({ isActive }) =>
+                  `navbar-mobile-link ${
+                    isActive ? "active" : ""
+                  }`
+                }
+                onClick={closeMenu}
+              >
+                <span>{link.name}</span>
+
+                <ArrowUpRight
+                  className="navbar-mobile-arrow"
+                  size={18}
+                  strokeWidth={2}
+                />
+              </NavLink>
+            ))}
+
+
+            {/* MOBILE RESUME */}
+
+            <a
+              href="/Nathan-Frontend-Developer/resume.pdf"
+              className="navbar-mobile-resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+            >
+              <span>View Resume</span>
+
+              <ArrowUpRight
+                size={18}
+                strokeWidth={2}
+              />
+            </a>
+
+          </div>
+
+        </div>
+      )}
+
+    </header>
+  );
 }
 
 export default Navbar;

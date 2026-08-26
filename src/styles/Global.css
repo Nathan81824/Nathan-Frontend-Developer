@@ -4,7 +4,7 @@
 @import "./Projects/Projects.css";
 @import "./Contact/Contact.css";
 @import "./About/About.css";
-@import "./Skills/Skill.css";
+@import "./Skills/Skills.css";
 
 
 /* =================================
@@ -17,169 +17,866 @@
   box-sizing: border-box;
 }
 
+/* =========================================================
+   GLOBAL SCROLLBAR
+========================================================= */
 
-/* =================================
-   HTML
-================================= */
-
+/* Firefox */
 html {
-  scroll-behavior: smooth;
-
   scrollbar-width: thin;
-
-  scrollbar-color:
-    var(--color-primary-light)
-    var(--dark-bg-primary);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
-
-
-/* =================================
-   BODY
-================================= */
-
-body {
-  margin: 0;
-
-  min-width: 320px;
-  min-height: 100vh;
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  background:
-    var(--dark-bg-primary);
-
-  color:
-    var(--color-text-primary);
-
-  -webkit-font-smoothing: antialiased;
-
-  overflow-x: hidden;
-}
-
-
-/* =================================
-   CUSTOM SCROLLBAR
-================================= */
 
 /* Chrome / Edge / Safari */
-
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background:
-    var(--dark-bg-primary);
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background:
-    var(--color-primary);
+  background: var(--scrollbar-thumb);
 
-  border:
-    2px solid
-    var(--dark-bg-primary);
+  border-radius: var(--scrollbar-radius);
 
-  border-radius:
-    var(--radius-pill);
+  border: 2px solid var(--scrollbar-track);
 
   transition:
     background var(--transition-normal);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background:
-    var(--color-primary-light);
+  background: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
+}
+
+/* =========================================================
+   TYPOGRAPHY
+   Nathan Frontend Developer Portfolio
+   No Variables
+   No Animations
+   No Responsive Rules
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY
+========================================================= */
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: #cbd5e1;
+
+  text-rendering: optimizeLegibility;
 }
 
 
-/* =================================
-   FORM ELEMENTS
-================================= */
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.8px;
+
+  text-rendering: optimizeLegibility;
+}
+
+
+/* =========================================================
+   H1
+========================================================= */
+
+h1 {
+  font-size: 56px;
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -2.5px;
+}
+
+
+/* =========================================================
+   H2
+========================================================= */
+
+h2 {
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   H3
+========================================================= */
+
+h3 {
+  font-size: 32px;
+
+  font-weight: 750;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.2px;
+}
+
+
+/* =========================================================
+   H4
+========================================================= */
+
+h4 {
+  font-size: 26px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+}
+
+
+/* =========================================================
+   H5
+========================================================= */
+
+h5 {
+  font-size: 21px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   H6
+========================================================= */
+
+h6 {
+  font-size: 18px;
+
+  font-weight: 650;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p {
+  margin: 0;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  letter-spacing: 0;
+
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   LEAD TEXT
+========================================================= */
+
+.lead {
+  font-size: 20px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: #cbd5e1;
+
+  letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   SMALL TEXT
+========================================================= */
+
+.small-text {
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   EXTRA SMALL TEXT
+========================================================= */
+
+.x-small-text {
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   MUTED TEXT
+========================================================= */
+
+.muted-text {
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   EYEBROW / SECTION LABEL
+========================================================= */
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #60a5fa;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   SECTION DESCRIPTION
+========================================================= */
+
+.section-description {
+  max-width: 700px;
+
+  margin-top: 18px;
+
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.card-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.card-description {
+  margin-top: 10px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   NAVIGATION TYPOGRAPHY
+========================================================= */
+
+.navbar-link {
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   LOGO TYPOGRAPHY
+========================================================= */
+
+.navbar-logo {
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 31px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   BUTTON TYPOGRAPHY
+========================================================= */
 
 button,
+.btn,
+.button {
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   HERO TYPOGRAPHY
+========================================================= */
+
+.hero-greeting {
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #93c5fd;
+}
+
+
+.hero-title {
+  font-size: 72px;
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+
+  color: #ffffff;
+}
+
+
+.hero-title span {
+  color: #60a5fa;
+}
+
+
+.hero-description {
+  max-width: 650px;
+
+  margin-top: 24px;
+
+  font-size: 17px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+
+  letter-spacing: -0.1px;
+
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   SKILLS TYPOGRAPHY
+========================================================= */
+
+.skills-title {
+  color: #ffffff;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+
+.skills-description {
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+.skill-title {
+  color: #ffffff;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.3px;
+}
+
+
+.skill-description {
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+
+.skill-label {
+  color: #cbd5e1;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   PROJECT TYPOGRAPHY
+========================================================= */
+
+.project-title {
+  color: #ffffff;
+
+  font-size: 24px;
+
+  font-weight: 750;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.7px;
+}
+
+
+.project-description {
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+
+.project-tag {
+  color: #93c5fd;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ABOUT TYPOGRAPHY
+========================================================= */
+
+.about-title {
+  color: #ffffff;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+
+.about-text {
+  color: #cbd5e1;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT TYPOGRAPHY
+========================================================= */
+
+.contact-title {
+  color: #ffffff;
+
+  font-size: 42px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+
+.contact-description {
+  color: #94a3b8;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.75;
+}
+
+
+label {
+  color: #cbd5e1;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   INPUT TYPOGRAPHY
+========================================================= */
+
 input,
-textarea {
-  font: inherit;
+textarea,
+select {
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  letter-spacing: 0;
+
+  color: #ffffff;
 }
 
-button {
-  cursor: pointer;
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+
+  font-weight: 400;
 }
 
 
-/* =================================
+/* =========================================================
    LINKS
-================================= */
+========================================================= */
 
 a {
-  color:
-    inherit;
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
-  text-decoration:
-    none;
+  text-decoration: none;
 }
 
 
-/* =================================
-   IMAGES
-================================= */
+/* =========================================================
+   LISTS
+========================================================= */
 
-img {
-  max-width:
-    100%;
+ul,
+ol {
+  font-size: 16px;
 
-  height:
-    auto;
+  line-height: 1.7;
 
-  display:
-    block;
+  color: #cbd5e1;
 }
 
 
-/* =================================
-   TEXT SELECTION
-================================= */
+/* =========================================================
+   CODE
+========================================================= */
+
+code,
+pre,
+kbd,
+samp {
+  font-family:
+    "Fira Code",
+    "Cascadia Code",
+    Consolas,
+    monospace;
+}
+
+
+code {
+  font-size: 0.9em;
+
+  color: #93c5fd;
+}
+
+
+pre {
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: #d4d4d4;
+}
+
+
+/* =========================================================
+   STRONG / EMPHASIS
+========================================================= */
+
+strong,
+b {
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+em,
+i {
+  font-style: italic;
+}
+
+
+/* =========================================================
+   BLOCKQUOTE
+========================================================= */
+
+blockquote {
+  margin: 0;
+
+  padding-left: 20px;
+
+  border-left: 2px solid #3b82f6;
+
+  color: #cbd5e1;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
 
 ::selection {
-  background:
-    rgba(59, 130, 246, 0.35);
+  background: rgba(59, 130, 246, 0.35);
 
-  color:
-    var(--color-text-primary);
+  color: #ffffff;
 }
 
 
-/* =================================
-   FOCUS
-================================= */
+/* =========================================================
+   PLACEHOLDER / DISABLED
+========================================================= */
 
-:focus-visible {
-  outline:
-    2px solid
-    var(--color-primary-bright);
+:disabled {
+  cursor: not-allowed;
 
-  outline-offset:
-    3px;
-
-  border-radius:
-    var(--radius-small);
+  opacity: 0.6;
 }
 
 
-/* =================================
-   REDUCED MOTION
-================================= */
+/* =========================================================
+   TYPOGRAPHY UTILITIES
+========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior:
-      auto;
-  }
-
+.text-primary {
+  color: #ffffff;
 }
 
+.text-secondary {
+  color: #cbd5e1;
+}
+
+.text-muted {
+  color: #94a3b8;
+}
+
+.text-blue {
+  color: #60a5fa;
+}
+
+.text-bright {
+  color: #93c5fd;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

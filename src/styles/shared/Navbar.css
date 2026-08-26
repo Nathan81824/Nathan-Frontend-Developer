@@ -1,17 +1,15 @@
-/* =========================================
+
+/* =========================================================
    NAVBAR
-   Background intentionally NOT using variables
-========================================= */
+   Dark mode = default
+========================================================= */
 
 .navbar {
   position: sticky;
-
   top: 0;
-
   z-index: 9999;
 
   width: 100%;
-
   min-height: 86px;
 
   background:
@@ -27,13 +25,10 @@
     ),
     #05070b;
 
-  border-bottom:
-    1px solid
-    rgba(96, 165, 250, 0.12);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.12);
 
   box-shadow:
-    0 8px 30px
-    rgba(0, 0, 0, 0.18);
+    0 8px 30px rgba(0, 0, 0, 0.18);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -42,9 +37,9 @@
 }
 
 
-/* =========================================
-   TOP GLOW
-========================================= */
+/* =========================================================
+   TOP LIGHT
+========================================================= */
 
 .navbar::before {
   content: "";
@@ -73,9 +68,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    BOTTOM LIGHT
-========================================= */
+========================================================= */
 
 .navbar::after {
   content: "";
@@ -106,33 +101,13 @@
 
   filter: blur(1px);
 
-  animation:
-    navbarLight
-    4s
-    ease-in-out
-    infinite;
-
   pointer-events: none;
 }
 
 
-@keyframes navbarLight {
-  0%,
-  100% {
-    width: 120px;
-    opacity: 0.45;
-  }
-
-  50% {
-    width: 300px;
-    opacity: 0.95;
-  }
-}
-
-
-/* =========================================
+/* =========================================================
    CONTAINER
-========================================= */
+========================================================= */
 
 .navbar-container {
   position: relative;
@@ -156,9 +131,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    LOGO
-========================================= */
+========================================================= */
 
 .navbar-logo {
   position: relative;
@@ -167,20 +142,21 @@
 
   text-decoration: none;
 
+  font-family: var(--font-heading);
+
   font-size: 31px;
 
   font-weight: 850;
 
   letter-spacing: -1.5px;
 
-  white-space: nowrap;
+  line-height: 1;
 
-  transition:
-    transform var(--transition-smooth),
-    text-shadow var(--transition-normal),
-    opacity var(--transition-fast);
+  white-space: nowrap;
 }
 
+
+/* LOGO DOT */
 
 .navbar-logo::after {
   content: ".";
@@ -190,63 +166,12 @@
   text-shadow:
     0 0 12px
     rgba(96, 165, 250, 0.8);
-
-  transition:
-    color var(--transition-fast),
-    text-shadow var(--transition-fast);
 }
 
 
-.navbar-logo::before {
-  content: "";
-
-  position: absolute;
-
-  left: -12px;
-  top: 50%;
-
-  width: 4px;
-  height: 4px;
-
-  transform: translateY(-50%);
-
-  background: var(--color-primary-bright);
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 0 10px
-    rgba(96, 165, 250, 0.9);
-
-  opacity: 0;
-
-  transition:
-    opacity var(--transition-normal),
-    transform var(--transition-normal);
-}
-
-
-.navbar-logo:hover {
-  transform: translateY(-2px);
-
-  text-shadow:
-    0 0 25px
-    rgba(96, 165, 250, 0.2);
-}
-
-
-.navbar-logo:hover::before {
-  opacity: 1;
-
-  transform:
-    translateY(-50%)
-    translateX(3px);
-}
-
-
-/* =========================================
-   DESKTOP NAVIGATION
-========================================= */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .navbar-links {
   height: 86px;
@@ -254,15 +179,16 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 34px;
 }
 
 
-/* =========================================
+/* =========================================================
    NAV LINKS
-========================================= */
+========================================================= */
 
 .navbar-link {
   position: relative;
@@ -277,35 +203,26 @@
 
   text-decoration: none;
 
+  font-family: var(--font-primary);
+
   font-size: 14px;
 
   font-weight: 650;
 
-  white-space: nowrap;
+  letter-spacing: 0.1px;
 
-  transition:
-    color var(--transition-normal),
-    transform var(--transition-smooth),
-    text-shadow var(--transition-normal);
+  white-space: nowrap;
 }
 
 
 .navbar-link:hover {
   color: var(--color-text-primary) !important;
-
-  transform: translateY(-2px);
-
-  text-shadow:
-    0 0 15px
-    rgba(147, 197, 253, 0.3);
 }
 
 
-
-
-/* =========================================
+/* =========================================================
    LINK UNDERLINE
-========================================= */
+========================================================= */
 
 .navbar-link::after {
   content: "";
@@ -333,9 +250,6 @@
   box-shadow:
     0 0 12px
     rgba(59, 130, 246, 0.65);
-
-  transition:
-    width var(--transition-smooth);
 }
 
 
@@ -345,26 +259,100 @@
 }
 
 
-/* =========================================
+/* =========================================================
    ACTIVE LINK
-========================================= */
+========================================================= */
 
 .navbar-link.active {
   color: var(--color-primary-bright) !important;
 
   text-shadow:
     0 0 15px
-    rgba(96, 165, 250, 0.2);
+    rgba(96, 165, 250, 0.20);
 }
 
-/* =========================================
+
+/* =========================================================
+   NAVBAR ACTIONS
+========================================================= */
+
+.navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.navbar-theme-button {
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  color: var(--color-primary-bright);
+
+  background:
+    rgba(59, 130, 246, 0.08);
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.22);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.05);
+
+  outline: none;
+}
+
+
+.navbar-theme-button:hover {
+  color: var(--color-text-primary);
+
+  background:
+    rgba(59, 130, 246, 0.16);
+
+  border-color:
+    rgba(147, 197, 253, 0.45);
+
+  box-shadow:
+    0 8px 22px
+    rgba(37, 99, 235, 0.18);
+}
+
+
+.navbar-theme-button:focus-visible {
+  outline: 2px solid
+    rgba(96, 165, 250, 0.55);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
    RESUME BUTTON
-   BLUE GLASS STYLE
-========================================= */
+========================================================= */
 
 .navbar-resume {
-  position: relative;
-
   min-width: 118px;
   height: 46px;
 
@@ -375,204 +363,82 @@
 
   padding: 0 23px;
 
-  overflow: hidden;
+  color: var(--button-primary-text) !important;
 
-  color: var(--color-primary-bright) !important;
-
-  /* GLASS BACKGROUND */
   background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.14),
-      rgba(37, 99, 235, 0.06)
-    );
+    var(--button-primary-bg);
 
   border:
     1px solid
-    rgba(96, 165, 250, 0.30);
+    var(--button-primary-border);
 
-  border-radius: var(--radius-pill);
+  border-radius:
+    var(--radius-pill);
 
   text-decoration: none;
+
+  font-family: var(--font-primary);
 
   font-size: 14px;
 
   font-weight: 800;
 
-  /* GLASS BLUR */
-  backdrop-filter:
-    blur(var(--glass-blur));
+  letter-spacing: 0.1px;
 
-  -webkit-backdrop-filter:
-    blur(var(--glass-blur));
-
-  /* BLUE GLOW */
   box-shadow:
-    0 8px 25px
-    rgba(37, 99, 235, 0.16),
+    var(--button-primary-shadow);
 
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.08);
-
-  transition:
-    transform var(--transition-smooth),
-    background var(--transition-normal),
-    border-color var(--transition-normal),
-    box-shadow var(--transition-normal),
-    color var(--transition-normal);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-
-/* =========================================
-   GLASS SHINE
-========================================= */
-
-.navbar-resume::before {
-  content: "";
-
-  position: absolute;
-
-  top: -60%;
-
-  left: -80px;
-
-  width: 45px;
-
-  height: 220%;
-
-  transform: rotate(25deg);
-
-  background:
-    rgba(255, 255, 255, 0.25);
-
-  filter: blur(6px);
-
-  transition:
-    left 0.65s ease;
-
-  pointer-events: none;
-}
-
-
-/* =========================================
-   HOVER
-========================================= */
 
 .navbar-resume:hover {
   color: var(--color-text-primary) !important;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.24),
-      rgba(37, 99, 235, 0.12)
-    );
+    var(--button-primary-hover);
 
   border-color:
-    rgba(147, 197, 253, 0.55);
-
-  transform:
-    translateY(-3px)
-    scale(1.025);
+    var(--button-primary-hover-border);
 
   box-shadow:
-    0 15px 38px
-    rgba(37, 99, 235, 0.25),
-
-    0 0 25px
-    rgba(96, 165, 250, 0.10),
-
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.12);
+    var(--button-primary-hover-shadow);
 }
 
-
-.navbar-resume:hover::before {
-  left: 130%;
-}
-
-
-/* =========================================
-   FOCUS
-========================================= */
 
 .navbar-resume:focus-visible {
-  outline: none;
+  outline: 2px solid
+    rgba(96, 165, 250, 0.55);
 
-  box-shadow:
-    0 0 0 3px
-    rgba(96, 165, 250, 0.18),
-
-    0 10px 30px
-    rgba(37, 99, 235, 0.20);
+  outline-offset: 3px;
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================================================
+   MOBILE ACTIONS
+========================================================= */
 
-@media (max-width: 1000px) {
-
-  .navbar-resume {
-    min-width: 105px;
-
-    height: 44px;
-
-    padding: 0 19px;
-
-    font-size: 13px;
-  }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 750px) {
-
-  .navbar-container > .navbar-resume {
-    display: none;
-  }
-
-}
-
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .navbar-resume {
-    transition: none;
-  }
-
-  .navbar-resume::before {
-    transition: none;
-  }
-
-  .navbar-resume:hover {
-    transform: none;
-  }
-
-}
-
-
-
-/* =========================================
-   MOBILE MENU BUTTON
-========================================= */
-
-.navbar-menu-button {
+.navbar-mobile-actions {
   display: none;
 
-  position: relative;
+  align-items: center;
 
-  width: 46px;
-  height: 46px;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.navbar-menu-button {
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
 
   align-items: center;
   justify-content: center;
@@ -592,15 +458,7 @@
 
   cursor: pointer;
 
-  box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.04);
-
-  transition:
-    transform var(--transition-smooth),
-    background var(--transition-normal),
-    border-color var(--transition-normal),
-    box-shadow var(--transition-normal);
+  outline: none;
 }
 
 
@@ -608,39 +466,30 @@
   color: var(--color-text-primary);
 
   background:
-    rgba(59, 130, 246, 0.18);
+    rgba(59, 130, 246, 0.16);
 
   border-color:
-    rgba(96, 165, 250, 0.45);
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 8px 25px
-    rgba(37, 99, 235, 0.16);
+    rgba(96, 165, 250, 0.40);
 }
 
 
 .navbar-menu-button.open {
-  color: var(--color-text-primary);
+  color: var(--color-primary-bright);
 
   background:
-    rgba(59, 130, 246, 0.20);
+    rgba(59, 130, 246, 0.16);
 
   border-color:
-    rgba(147, 197, 253, 0.45);
+    rgba(147, 197, 253, 0.40);
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE MENU
-========================================= */
+========================================================= */
 
 .navbar-mobile-menu {
   width: 100%;
-
-  overflow: hidden;
 
   background:
     rgba(5, 7, 11, 0.97);
@@ -653,6 +502,10 @@
   -webkit-backdrop-filter: blur(20px);
 }
 
+
+/* =========================================================
+   MOBILE INNER
+========================================================= */
 
 .navbar-mobile-inner {
   width: 92%;
@@ -669,17 +522,15 @@
 
   flex-direction: column;
 
-  gap: 7px;
+  gap: 8px;
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE LINKS
-========================================= */
+========================================================= */
 
 .navbar-mobile-link {
-  position: relative;
-
   min-height: 52px;
 
   display: flex;
@@ -690,61 +541,25 @@
 
   padding: 0 17px;
 
-  overflow: hidden;
-
   color: var(--color-text-muted) !important;
 
   background:
-    linear-gradient(
-      90deg,
-      rgba(59, 130, 246, 0.04),
-      rgba(59, 130, 246, 0.01)
-    );
+    rgba(59, 130, 246, 0.04);
 
   border:
     1px solid
-    rgba(96, 165, 250, 0.07);
+    rgba(96, 165, 250, 0.08);
 
-  border-radius: var(--radius-medium);
+  border-radius:
+    var(--radius-medium);
 
   text-decoration: none;
+
+  font-family: var(--font-primary);
 
   font-size: 14px;
 
   font-weight: 650;
-
-  transition:
-    color var(--transition-fast),
-    background var(--transition-normal),
-    border-color var(--transition-normal),
-    transform var(--transition-smooth);
-}
-
-
-.navbar-mobile-link::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  top: 0;
-
-  width: 3px;
-  height: 100%;
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--color-primary-soft),
-      var(--color-primary)
-    );
-
-  transform: scaleY(0);
-
-  transform-origin: center;
-
-  transition:
-    transform var(--transition-smooth);
 }
 
 
@@ -755,75 +570,61 @@
     rgba(59, 130, 246, 0.10);
 
   border-color:
-    rgba(96, 165, 250, 0.18);
-
-  transform:
-    translateX(5px);
-}
-
-
-.navbar-mobile-link:hover::before,
-.navbar-mobile-link.active::before {
-  transform: scaleY(1);
+    rgba(96, 165, 250, 0.20);
 }
 
 
 .navbar-mobile-link.active {
-  color: var(--color-primary-bright) !important;
+  color:
+    var(--color-primary-bright) !important;
 
   background:
     rgba(59, 130, 246, 0.09);
 
   border-color:
-    rgba(96, 165, 250, 0.20);
+    rgba(96, 165, 250, 0.22);
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE ARROW
-========================================= */
+========================================================= */
 
 .navbar-mobile-arrow {
-  color: var(--color-primary-bright);
+  color:
+    var(--color-primary-bright);
 
-  font-size: 17px;
-
-  opacity: 0.65;
-
-  transition:
-    transform var(--transition-normal),
-    opacity var(--transition-normal);
+  opacity: 0.7;
 }
 
 
-.navbar-mobile-link:hover .navbar-mobile-arrow {
+.navbar-mobile-link:hover
+.navbar-mobile-arrow {
   opacity: 1;
-
-  transform:
-    translate(3px, -3px);
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE RESUME
-   Same primary variable as desktop Resume
-========================================= */
+========================================================= */
 
 .navbar-mobile-resume {
-  position: relative;
-
   min-height: 52px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  gap: 8px;
 
   margin-top: 8px;
 
-  overflow: hidden;
+  padding: 0 18px;
 
-  color: var(--button-primary-text) !important;
+  color:
+    var(--button-primary-text) !important;
 
   background:
     var(--button-primary-bg);
@@ -832,9 +633,13 @@
     1px solid
     var(--button-primary-border);
 
-  border-radius: var(--radius-medium);
+  border-radius:
+    var(--radius-medium);
 
   text-decoration: none;
+
+  font-family:
+    var(--font-primary);
 
   font-size: 14px;
 
@@ -842,71 +647,326 @@
 
   box-shadow:
     var(--button-primary-shadow);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  transition:
-    transform var(--transition-smooth),
-    box-shadow var(--transition-normal),
-    filter var(--transition-normal);
-}
-
-
-.navbar-mobile-resume::before {
-  content: "";
-
-  position: absolute;
-
-  top: -50%;
-  left: -80px;
-
-  width: 45px;
-  height: 200%;
-
-  transform: rotate(25deg);
-
-  background:
-    rgba(255, 255, 255, 0.40);
-
-  filter: blur(5px);
-
-  transition: left 0.65s ease;
-
-  pointer-events: none;
-}
-
-
-.navbar-mobile-resume:hover::before {
-  left: 130%;
 }
 
 
 .navbar-mobile-resume:hover {
-  transform:
-    translateY(-2px);
+  color:
+    var(--color-text-primary) !important;
 
   background:
-    var(--button-primary-hover-bg);
+    var(--button-primary-hover);
+
+  border-color:
+    var(--button-primary-hover-border);
 
   box-shadow:
     var(--button-primary-hover-shadow);
-
-  filter: brightness(1.05);
 }
 
-/* =========================================
-   DESKTOP — HIDE MOBILE MENU
-========================================= */
 
-@media (min-width: 751px) {
+/* =========================================================
+   LIGHT MODE
+========================================================= */
 
-  .navbar-menu-button {
-    display: none !important;
-  }
+.navbar-light {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(59, 130, 246, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(96, 165, 250, 0.08),
+      transparent 32%
+    ),
+    rgba(248, 250, 252, 0.94);
 
-  .navbar-mobile-menu {
-    display: none !important;
-  }
+  border-bottom:
+    1px solid
+    rgba(37, 99, 235, 0.12);
 
+  box-shadow:
+    0 8px 30px
+    rgba(15, 23, 42, 0.08);
+}
+
+
+/* LIGHT TOP LINE */
+
+.navbar-light::before {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(37, 99, 235, 0.25),
+      rgba(59, 130, 246, 0.45),
+      rgba(37, 99, 235, 0.25),
+      transparent
+    );
+}
+
+
+/* LIGHT BOTTOM LINE */
+
+.navbar-light::after {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #2563eb,
+      #60a5fa,
+      #2563eb,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   LIGHT LOGO
+========================================================= */
+
+.navbar-light .navbar-logo {
+  color:
+    #0f172a !important;
+
+  text-shadow:
+    none;
+}
+
+
+.navbar-light .navbar-logo::after {
+  color:
+    #2563eb;
+
+  text-shadow:
+    0 0 12px
+    rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   LIGHT NAV LINKS
+========================================================= */
+
+.navbar-light .navbar-link {
+  color:
+    #64748b !important;
+}
+
+
+.navbar-light .navbar-link:hover {
+  color:
+    #0f172a !important;
+}
+
+
+.navbar-light .navbar-link.active {
+  color:
+    #2563eb !important;
+
+  text-shadow:
+    0 0 12px
+    rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   LIGHT THEME BUTTON
+========================================================= */
+
+.navbar-light .navbar-theme-button {
+  color:
+    #2563eb;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  border-color:
+    rgba(37, 99, 235, 0.18);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.8);
+}
+
+
+.navbar-light .navbar-theme-button:hover {
+  color:
+    #1d4ed8;
+
+  background:
+    rgba(37, 99, 235, 0.14);
+
+  border-color:
+    rgba(37, 99, 235, 0.32);
+
+  box-shadow:
+    0 8px 22px
+    rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   LIGHT RESUME
+========================================================= */
+
+.navbar-light .navbar-resume {
+  color:
+    #1d4ed8 !important;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  border-color:
+    rgba(37, 99, 235, 0.20);
+
+  box-shadow:
+    0 8px 24px
+    rgba(37, 99, 235, 0.10);
+}
+
+
+.navbar-light .navbar-resume:hover {
+  color:
+    #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3b82f6
+    );
+
+  border-color:
+    #2563eb;
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 99, 235, 0.22);
+}
+
+
+/* =========================================================
+   LIGHT MOBILE BUTTON
+========================================================= */
+
+.navbar-light .navbar-menu-button {
+  color:
+    #334155;
+
+  background:
+    rgba(37, 99, 235, 0.07);
+
+  border-color:
+    rgba(37, 99, 235, 0.16);
+}
+
+
+.navbar-light .navbar-menu-button:hover,
+.navbar-light .navbar-menu-button.open {
+  color:
+    #2563eb;
+
+  background:
+    rgba(37, 99, 235, 0.12);
+
+  border-color:
+    rgba(37, 99, 235, 0.28);
+}
+
+
+/* =========================================================
+   LIGHT MOBILE MENU
+========================================================= */
+
+.navbar-light .navbar-mobile-menu,
+.navbar-mobile-menu-light {
+  background:
+    rgba(248, 250, 252, 0.97);
+
+  border-top:
+    1px solid
+    rgba(37, 99, 235, 0.10);
+
+  box-shadow:
+    0 15px 35px
+    rgba(15, 23, 42, 0.08);
+}
+
+
+/* =========================================================
+   LIGHT MOBILE LINKS
+========================================================= */
+
+.navbar-light .navbar-mobile-link {
+  color:
+    #64748b !important;
+
+  background:
+    rgba(37, 99, 235, 0.035);
+
+  border-color:
+    rgba(37, 99, 235, 0.10);
+}
+
+
+.navbar-light .navbar-mobile-link:hover {
+  color:
+    #0f172a !important;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  border-color:
+    rgba(37, 99, 235, 0.18);
+}
+
+
+.navbar-light .navbar-mobile-link.active {
+  color:
+    #2563eb !important;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  border-color:
+    rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   LIGHT MOBILE RESUME
+========================================================= */
+
+.navbar-light .navbar-mobile-resume {
+  color:
+    #2563eb !important;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  border-color:
+    rgba(37, 99, 235, 0.20);
+
+  box-shadow:
+    0 8px 24px
+    rgba(37, 99, 235, 0.08);
+}
+
+
+.navbar-light .navbar-mobile-resume:hover {
+  color:
+    #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3b82f6
+    );
+
+  border-color:
+    #2563eb;
 }

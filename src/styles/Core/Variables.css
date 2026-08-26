@@ -1,22 +1,41 @@
 /* =========================================================
-   GLOBAL DESIGN VARIABLES
-   Portfolio Website
+   VARIABLES.CSS
+   Nathan Frontend Developer Portfolio
+   Global Design System
 ========================================================= */
 
 :root {
 
   /* =======================================================
-     COLORS
+     BRAND
   ======================================================= */
 
-  /* Primary Blue */
   --color-primary: #3b82f6;
   --color-primary-soft: #60a5fa;
   --color-primary-bright: #93c5fd;
   --color-primary-dark: #2563eb;
   --color-primary-deep: #1d4ed8;
 
-  /* Backgrounds */
+  --color-secondary: #8b5cf6;
+  --color-accent: #06b6d4;
+
+
+  /* =======================================================
+     TEXT COLORS
+  ======================================================= */
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-light: #e2e8f0;
+  --color-text-dark: #64748b;
+  --color-text-heading: #ffffff;
+
+
+  /* =======================================================
+     BACKGROUNDS
+  ======================================================= */
+
   --color-bg-main: #05070b;
   --color-bg-dark: #030508;
   --color-bg-section: #050b14;
@@ -24,21 +43,29 @@
   --color-bg-card-soft: #0d1420;
   --color-bg-elevated: #111827;
 
-  /* Text */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #cbd5e1;
-  --color-text-muted: #94a3b8;
-  --color-text-light: #e2e8f0;
-  --color-text-dark: #64748b;
-
-  /* Borders */
-  --color-border: rgba(148, 163, 184, 0.12);
-  --color-border-soft: rgba(148, 163, 184, 0.08);
-  --color-border-blue: rgba(96, 165, 250, 0.20);
-  --color-border-blue-strong: rgba(96, 165, 250, 0.40);
 
   /* =======================================================
-     BLUE GLOW SYSTEM
+     BORDERS
+  ======================================================= */
+
+  --color-border:
+    rgba(148, 163, 184, 0.12);
+
+  --color-border-soft:
+    rgba(148, 163, 184, 0.08);
+
+  --color-border-strong:
+    rgba(148, 163, 184, 0.20);
+
+  --color-border-blue:
+    rgba(96, 165, 250, 0.20);
+
+  --color-border-blue-strong:
+    rgba(96, 165, 250, 0.40);
+
+
+  /* =======================================================
+     GLOW
   ======================================================= */
 
   --glow-blue-xs:
@@ -55,6 +82,7 @@
 
   --glow-blue-xl:
     0 0 80px rgba(37, 99, 235, 0.20);
+
 
   /* =======================================================
      SHADOWS
@@ -75,7 +103,10 @@
   --shadow-xl:
     0 35px 80px rgba(0, 0, 0, 0.42);
 
-  /* Blue shadows */
+
+  /* =======================================================
+     BLUE SHADOWS
+  ======================================================= */
 
   --shadow-blue-sm:
     0 8px 25px rgba(37, 99, 235, 0.16);
@@ -85,6 +116,10 @@
 
   --shadow-blue-lg:
     0 25px 60px rgba(37, 99, 235, 0.20);
+
+  --shadow-blue:
+    0 15px 38px rgba(37, 99, 235, 0.25);
+
 
   /* =======================================================
      TYPOGRAPHY
@@ -108,7 +143,10 @@
     Consolas,
     monospace;
 
-  /* Font Sizes */
+
+  /* =======================================================
+     FONT SIZES
+  ======================================================= */
 
   --font-size-xs: 11px;
   --font-size-sm: 13px;
@@ -122,7 +160,10 @@
   --font-size-5xl: 56px;
   --font-size-6xl: 72px;
 
-  /* Font Weights */
+
+  /* =======================================================
+     FONT WEIGHTS
+  ======================================================= */
 
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -130,6 +171,7 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
+
 
   /* =======================================================
      LINE HEIGHTS
@@ -141,6 +183,7 @@
   --line-height-relaxed: 1.7;
   --line-height-loose: 1.85;
 
+
   /* =======================================================
      LETTER SPACING
   ======================================================= */
@@ -150,6 +193,7 @@
   --letter-wide: 1px;
   --letter-wider: 1.5px;
   --letter-uppercase: 2px;
+
 
   /* =======================================================
      BORDER RADIUS
@@ -163,8 +207,9 @@
   --radius-2xl: 24px;
   --radius-pill: 999px;
 
+
   /* =======================================================
-     GLASS EFFECT
+     GLASS
   ======================================================= */
 
   --glass-bg:
@@ -185,6 +230,7 @@
   --glass-blur: 18px;
 
   --glass-blur-heavy: 25px;
+
 
   /* =======================================================
      TRANSITIONS
@@ -207,6 +253,7 @@
   --transition-slow:
     0.6s ease;
 
+
   /* =======================================================
      SPACING
   ======================================================= */
@@ -219,72 +266,102 @@
   --space-6: 24px;
   --space-7: 28px;
   --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-  --space-30: 120px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 56px;
+  --space-12: 64px;
+  --space-14: 72px;
+  --space-16: 80px;
+  --space-20: 96px;
+  --space-24: 120px;
+  --space-30: 140px;
+
 
   /* =======================================================
-     CONTAINER SYSTEM
+     SECTION SPACING
   ======================================================= */
 
-  --container-width:
-    90%;
+  --section-padding:
+    120px 0;
 
-  --container-max-width:
-    1250px;
+  --section-padding-y:
+    120px;
 
-  --container-max-width-wide:
-    1450px;
+  --section-padding-top:
+    120px;
 
-  --container-max-width-ultra:
-    1650px;
+  --section-padding-bottom:
+    120px;
+
+  --section-padding-tablet:
+    100px 0;
+
+  --section-padding-mobile:
+    80px 0;
+
+  --section-gap:
+    90px;
+
+  --section-content-gap:
+    48px;
+
+
+  /* =======================================================
+     CONTAINER
+  ======================================================= */
+
+  --container-width: 90%;
+
+  --container-max-width: 1250px;
+
+  --container-max-width-wide: 1450px;
+
+  --container-max-width-ultra: 1650px;
+
+
+  /* =======================================================
+     CONTENT WIDTH
+  ======================================================= */
+
+  --content-narrow: 650px;
+
+  --content-medium: 850px;
+
+  --content-wide: 1100px;
+
 
   /* =======================================================
      NAVBAR
   ======================================================= */
 
-  --navbar-height:
-    86px;
+  --navbar-height: 86px;
 
-  --navbar-container-width:
-    88%;
+  --navbar-container-width: 88%;
 
-  --navbar-max-width:
-    1250px;
+  --navbar-max-width: 1250px;
 
-  --navbar-gap:
-    35px;
+  --navbar-gap: 35px;
 
-  --navbar-link-gap:
-    34px;
+  --navbar-link-gap: 34px;
 
-  --navbar-logo-size:
-    31px;
+  --navbar-logo-size: 31px;
 
-  --navbar-link-size:
-    14px;
+  --navbar-link-size: 14px;
 
-  --navbar-resume-width:
-    118px;
+  --navbar-resume-width: 118px;
 
-  --navbar-resume-height:
-    46px;
+  --navbar-resume-height: 46px;
 
-  --navbar-resume-padding:
-    23px;
+  --navbar-resume-padding: 23px;
+
 
   /* =======================================================
-     BUTTON SYSTEM
+     BUTTONS
   ======================================================= */
 
-  --button-height:
-    46px;
+  --button-height: 46px;
 
-  --button-padding-x:
-    23px;
+  --button-padding-x: 23px;
 
   --button-radius:
     var(--radius-small);
@@ -296,7 +373,7 @@
       rgba(37, 99, 235, 0.06)
     );
 
-  --button-primary-hover-bg:
+  --button-primary-hover:
     linear-gradient(
       135deg,
       rgba(59, 130, 246, 0.24),
@@ -313,15 +390,37 @@
     var(--color-primary-bright);
 
   --button-primary-shadow:
-    0 8px 25px
-    rgba(37, 99, 235, 0.16);
+    0 8px 25px rgba(37, 99, 235, 0.16);
 
   --button-primary-hover-shadow:
-    0 15px 38px
-    rgba(37, 99, 235, 0.25);
+    0 15px 38px rgba(37, 99, 235, 0.25);
+
 
   /* =======================================================
-     CARD SYSTEM
+     SECONDARY BUTTON
+  ======================================================= */
+
+  --button-secondary-bg:
+    rgba(37, 99, 235, 0.07);
+
+  --button-secondary-hover:
+    rgba(37, 99, 235, 0.14);
+
+  --button-secondary-text:
+    var(--color-text-secondary);
+
+  --button-secondary-border:
+    rgba(96, 165, 250, 0.20);
+
+  --button-secondary-hover-border:
+    rgba(96, 165, 250, 0.40);
+
+  --button-secondary-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15);
+
+
+  /* =======================================================
+     CARDS
   ======================================================= */
 
   --card-background:
@@ -338,61 +437,231 @@
     var(--radius-large);
 
   --card-padding:
-    25px;
+    28px;
 
   --card-shadow:
-    0 20px 50px
-    rgba(0, 0, 0, 0.25);
+    0 20px 50px rgba(0, 0, 0, 0.25);
 
   --card-hover-shadow:
-    0 25px 60px
-    rgba(0, 0, 0, 0.40);
+    0 25px 60px rgba(0, 0, 0, 0.40);
+
 
   /* =======================================================
-     SECTION SYSTEM
+     GRID
   ======================================================= */
 
-  --section-padding:
-    120px 0;
+  --grid-gap-xs:
+    var(--space-3);
 
-  --section-padding-tablet:
-    100px 0;
+  --grid-gap-sm:
+    var(--space-5);
 
-  --section-padding-mobile:
-    80px 0;
+  --grid-gap-md:
+    var(--space-7);
+
+  --grid-gap-lg:
+    var(--space-10);
+
+  --grid-gap-xl:
+    var(--space-12);
+
 
   /* =======================================================
-     Z-INDEX SYSTEM
+     HERO
+  ======================================================= */
+
+  --hero-max-width: 680px;
+
+  --hero-title-size:
+    clamp(
+      4rem,
+      7vw,
+      6.8rem
+    );
+
+  --hero-title-weight: 800;
+
+  --hero-title-line-height: 0.9;
+
+  --hero-title-spacing: -5px;
+
+  --hero-card-max-width: 500px;
+
+  --hero-card-blur: 20px;
+
+
+  /* =======================================================
+     HERO ICONS
+  ======================================================= */
+
+  --icon-size: 55px;
+
+  --icon-primary:
+    var(--color-primary-bright);
+
+  --icon-bg:
+    rgba(59, 130, 246, 0.08);
+
+  --icon-border:
+    rgba(96, 165, 250, 0.20);
+
+  --icon-glow:
+    rgba(59, 130, 246, 0.20);
+
+
+  /* =======================================================
+     ICON SIZES
+  ======================================================= */
+
+  --icon-xs: 14px;
+
+  --icon-sm: 18px;
+
+  --icon-md: 24px;
+
+  --icon-lg: 32px;
+
+  --icon-xl: 42px;
+
+
+  /* =======================================================
+     HERO TEXT
+  ======================================================= */
+
+  --hero-greeting:
+    var(--color-primary-bright);
+
+  --hero-heading:
+    var(--color-text-primary);
+
+  --hero-heading-secondary:
+    var(--color-primary-soft);
+
+  --hero-description:
+    var(--color-text-secondary);
+
+  --hero-social:
+    var(--color-text-muted);
+
+  --hero-social-hover:
+    var(--color-primary-soft);
+
+
+  /* =======================================================
+     CODE EDITOR
+  ======================================================= */
+
+  --code-text: #d4d4d4;
+
+  --code-keyword: #569cd6;
+
+  --code-string: #ce9178;
+
+  --code-property: #9cdcfe;
+
+  --code-number: #b5cea8;
+
+  --code-comment: #6a9955;
+
+  --code-function: #dcdcaa;
+
+  --code-punctuation: #d4d4d4;
+
+  --code-cursor: #ffffff;
+
+
+  /* =======================================================
+     FORM / INPUTS
+  ======================================================= */
+
+  --input-height: 52px;
+
+  --input-padding-x: 16px;
+
+  --input-radius:
+    var(--radius-medium);
+
+  --input-background:
+    rgba(255, 255, 255, 0.035);
+
+  --input-border:
+    rgba(148, 163, 184, 0.16);
+
+  --input-focus-border:
+    rgba(96, 165, 250, 0.45);
+
+
+  /* =======================================================
+     SCROLLBAR
+  ======================================================= */
+
+  --scrollbar-width: 12px;
+
+  --scrollbar-radius: 999px;
+
+  --scrollbar-track: #111827;
+
+  --scrollbar-thumb: #3b82f6;
+
+  --scrollbar-thumb-hover: #60a5fa;
+
+
+  /* =======================================================
+     Z-INDEX
   ======================================================= */
 
   --z-base: 1;
+
   --z-content: 10;
+
   --z-dropdown: 100;
+
   --z-sticky: 1000;
+
   --z-navbar: 9999;
+
   --z-modal: 10000;
+
   --z-notification: 11000;
 
+
   /* =======================================================
-     RESPONSIVE BREAKPOINTS
-     
-     These are descriptive values.
-     CSS media queries cannot use var() for breakpoints
-     in normal CSS, so keep the actual @media numbers
-     inside your responsive files.
+     BREAKPOINT REFERENCES
+
+     Reference values only.
+     Actual @media rules belong in responsive files.
   ======================================================= */
 
   --breakpoint-mobile-small: 360px;
+
   --breakpoint-mobile: 450px;
 
   --breakpoint-tablet-small: 650px;
+
   --breakpoint-tablet: 768px;
-  --breakpoint-tablet-large: 901px;
+
+  --breakpoint-tablet-large: 950px;
 
   --breakpoint-desktop: 1101px;
+
   --breakpoint-large-desktop: 1400px;
+
   --breakpoint-xl-desktop: 1700px;
+
   --breakpoint-tv: 2000px;
 
-}
 
+  /* =======================================================
+     ANIMATION
+  ======================================================= */
+
+  --animation-fast:
+    0.3s ease;
+
+  --animation-normal:
+    0.6s ease;
+
+  --animation-slow:
+    1s ease;
+
+}
