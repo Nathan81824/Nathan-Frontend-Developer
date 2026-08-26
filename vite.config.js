@@ -4,7 +4,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
 
-  base: "/Nathan-Frontend-Developer/",
+  base: process.env.GITHUB_ACTIONS
+    ? "/Nathan-Frontend-Developer/"
+    : "/",
 
   build: {
     outDir: "dist",

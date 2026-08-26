@@ -1,15 +1,15 @@
 {
-  "name": "nathan-frontend-developer",
+  "name": "Nathan-Frontend-Developer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://nathan81824.github.io/Nathan-Frontend-Developer",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:github",
+    "build:github": "vite build --mode github",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
